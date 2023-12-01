@@ -1,0 +1,10 @@
+
+
+고소현
+- main, TEAM, MEDIA
+
+장보은
+- CLUB, GAME
+
+임수한
+- STATS, TICKET

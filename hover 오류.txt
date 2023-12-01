@@ -1,0 +1,62 @@
+hover 시 딸깍이 
+-> 딸깍이는 만큼 쫌쫌따리 수정해야함
+
+html
+
+	<div class="snb">
+                <h2>COMMUNITY</h2>
+                <ul>
+                    <li class="snb_a"><a href="#">자유게시판</a></li>
+                    <li class="snb_bd"><a href="#">Q&A게시판</a></li>
+                    <li class="snb_a"><a href="#">스폰서사이트</a></li>
+                    <li class="snb_a"><a href="#">관련사이트</a></li>
+                </ul>
+                </div>
+
+
+css
+
+/* snb */
+.snb h2 {
+    width: 200px;
+    height: 170px;
+    color: #fff;
+    background: #d91833;
+    font-size: 30px;
+    text-align: center;
+    line-height: 6;
+}
+
+.snb ul {
+    width: 200px;
+    height: 184px;
+    margin-top: 10px;
+
+}
+
+.snb ul li {
+    /* line-height: 2.7; */
+    box-sizing: border-box;
+    width: 200px;
+    height: 45px;
+    padding-left: 15px;
+}
+
+.snb_a:hover {
+    border: 1px solid #d91833;
+    padding-left: 14px;
+
+}
+
+.snb_bd {
+    border: 1px solid #d91833;
+}
+
+.snb a {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    font-size: 16px;
+    font-weight: bold;
+    color: #333;
+}

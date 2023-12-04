@@ -1,0 +1,140 @@
+gnb
+
+                <div class="gnb">
+                    <ul>
+                    <li>
+                        <a href="#">CLUB</a>
+                        <dl class="gnb_01">
+                            <dt>CLUB</dt>
+                            <dd><a href="#">인사말</a></dd>
+                            <dd><a href="#">소개</a></dd>
+                            <dd><a href="#">연혁</a></dd>
+                            <dd><a href="#">홈경기장 소개</a></dd>
+                            <dd><a href="#">스폰서</a></dd>
+                        </dl>
+                    </li>
+                    <li>
+                        <a href="#">TEAM</a>
+                        <dl class="gnb_02">
+                            <dt>TEAM</dt>
+                            <dd><a href="#">코칭 스태프</a></dd>
+                            <dd><a href="#">지원 스태프</a></dd>
+                            <dd><a href="#">선수</a></dd>
+                        </dl>
+                    </li>
+                    <li>
+                        <a href="#">STATS</a>
+                        <dl class="gnb_03">
+                            <dt>STATS</dt>
+                            <dd><a href="#">선수 기록</a></dd>
+                            <dd><a href="#">팀 기록</a></dd>
+                        </dl>
+                    </li>
+                    <li>
+                        <a href="#">GAME</a>
+                        <dl class="gnb_04">
+                            <dt>GAME</dt>
+                            <dd><a href="#">V-리그</a></dd>
+                            <dd><a href="#">컵대회</a></dd>
+                        </dl>
+                    </li>
+                    <li>
+                        <a href="#">MEDIA</a>
+                        <dl class="gnb_05">
+                            <dt>MEDIA</dt>
+                            <dd><a href="#">SNS</a></dd>
+                        </dl>
+                    </li>
+                    <li>
+                        <a href="#">TICKET</a>
+                        <dl class="gnb_06">
+                            <dt>TICKET</dt>
+                            <dd><a href="#">단일권 구매</a></dd>
+                            <dd><a href="#">티켓가격</a></dd>
+                            <dd><a href="#">멤버십 구매</a></dd>
+                            <dd><a href="#">티켓안내(공통)</a></dd>
+                            <dd><a href="#">모바일티켓 이용방법</a></dd>
+                        </dl>
+                    </li>
+                    </ul>
+                </div>
+
+
+/* gnb */
+
+.gnb ul {
+    width: 534px;
+    display: flex;
+    justify-content: space-around;
+}
+
+.gnb > ul > li > a {
+    font-size: 18px;
+    color: #fff;
+}
+
+.gnb dl {
+    position: absolute;
+    top: 130px;
+    line-height: 2.4;
+    z-index: 5;
+}
+
+.gnb_01 {
+    position: absolute;
+    left: 470px;
+}
+
+.gnb_02 {
+    position: absolute;
+    left: 630px;
+}
+
+.gnb_03 {
+    position: absolute;
+    left: 790px;
+}
+
+.gnb_04 {
+    position: absolute;
+    left: 950px;
+}
+
+.gnb_05 {
+    position: absolute;
+    left: 1110px;
+}
+
+.gnb_06 {
+    position: absolute;
+    left: 1275px;
+}
+
+.gnb dt {
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 5px;
+}
+
+.gnb dd {
+    font-size: 16px;
+    color: #565656;
+}
+
+.gnb dd a:hover {
+    font-size: 16px;
+    color: rgb(217, 24, 51);
+}
+
+.nav_bg {
+    background: #fff;
+    position: fixed;
+    width: 100%;
+    top: 90px;
+    left: 0;
+    height: 333px;
+}
+
+.gnb dl, .nav_bg {
+    display: none;
+}

@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/jquery.bxslider.css">
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script src="js/jquery.bxslider.js"></script>
+    <title>CLUB</title>
+    <link rel="stylesheet" href="css/kovo_c.css">
+    <link rel="stylesheet" href="css/reset.css">
+</head>
+<body>
+    <div class="wrap">
+        <header class="header">
+            <!-- header top menu-->
+                    <div class="nav_box">
+                        <div class="h_logo_box">
+                            <a href="#none" class="logo">
+                                <img src="images/logo_1.png" alt="정관장 레드스파크스">
+                                <span>정관장</span>
+                            </a>
+                            <a href="#none" class="dr_btn">
+                                <img src="images/arrow_d_w.png" alt="구단페이지 선택 닫기">
+                            </a>
+                        </div>
+                        <nav class="gnb">
+                        <ul>
+                            <li>
+                                <a href="#none">CLUB</a>
+                            </li>
+                            <li>
+                                <a href="#none">TEAM</a>
+                            </li>
+                            <li>
+                                <a href="#none">STATS</a>
+                            </li>
+                            <li>
+                                <a href="#none">GAME</a>
+                            </li>
+                            <li>
+                                <a href="#none">MEDIA</a>
+                            </li>
+                            <li>
+                                <a href="#none">TICKET</a>
+                            </li>
+                        </ul>
+                        </nav>
+                        <div class="login_nav">
+                            <ul>
+                                <li>
+                                    <a href="#none">LOGIN</a>
+                                    <div class="nav_dash"></div>
+                                </li>
+                                <li>
+                                    <a href="#none">SEARCH</a>
+                                    <div class="nav_dash"></div>
+                                </li>
+                                <li>
+                                    <a href="#none">KO</a>
+                                    <div class="nav_dash"></div>
+                                </li>
+                                <li>
+                                    <a href="#none">EN</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                <!-- 2dep menu -->
+               
+                <div class="gnb2">
+                    <ul>
+                    <li>
+                        <dl class="gnb_01">
+                            <dt>CLUB</dt>
+                            <dd><a href="#">인사말</a></dd>
+                            <dd><a href="#">소개</a></dd>
+                            <dd><a href="#">연혁</a></dd>
+                            <dd><a href="#">홈경기장 소개</a></dd>
+                            <dd><a href="#">스폰서</a></dd>
+                        </dl>
+                    </li>
+                    <li>
+                        <dl class="gnb_02">
+                            <dt>TEAM</dt>
+                            <dd><a href="#">코칭 스태프</a></dd>
+                            <dd><a href="#">지원 스태프</a></dd>
+                            <dd><a href="#">선수</a></dd>
+                        </dl>
+                    </li>
+                    <li>
+                        <dl class="gnb_03">
+                            <dt>STATS</dt>
+                            <dd><a href="#">선수 기록</a></dd>
+                            <dd><a href="#">팀 기록</a></dd>
+                        </dl>
+                    </li>
+                    <li>
+                        <dl class="gnb_04">
+                            <dt>GAME</dt>
+                            <dd><a href="#">V-리그</a></dd>
+                            <dd><a href="#">컵대회</a></dd>
+                        </dl>
+                    </li>
+                    <li>
+                        <dl class="gnb_05">
+                            <dt>MEDIA</dt>
+                            <dd><a href="#">SNS</a></dd>
+                        </dl>
+                    </li>
+                    <li>
+                        <dl class="gnb_06">
+                            <dt>TICKET</dt>
+                            <dd><a href="#">단일권 구매</a></dd>
+                            <dd><a href="#">티켓가격</a></dd>
+                            <dd><a href="#">멤버십 구매</a></dd>
+                            <dd><a href="#">티켓안내(공통)</a></dd>
+                            <dd><a href="#">모바일티켓 이용방법</a></dd>
+                        </dl>
+                    </li>
+                    </ul>
+                </div>
+        </header>
+
+        <main class="main">
+            <div class="main_banner">
+                <img src="/images/Frame_21578.png" alt="">
+            </div>
+        </main>
+        <footer class="footer">
+
+        </footer>
+    </div>
+    <script>
+        $(document).ready(function(){
+            let dash = $('.nav_dash');
+            let holding = 0;
+            /* 메뉴 스크롤 이벤트 */
+            $(window).scroll(function(){
+                let top = $(window).scrollTop();
+                if(top > 0){
+                    // header 메뉴 배경색
+                    $(".nav_box").css({
+                       "background":"rgba(255, 255, 255, 1)" 
+                    });
+                    // 메뉴 글자색
+                    $(".logo span, .gnb ul, .login_nav ul").css({
+                        "color":"#000"
+                    });
+                    // 로고 메뉴 다운버튼 이미지
+                    $(".dr_btn img").attr('src',"images/arrow_d.png");
+                    $(dash).css({"background-color":"#000"});
+    
+                } else if(top == 0 && holding == 0){
+                    console.log(top);
+                    $(".nav_box").css({
+                       "background":"none" 
+                    });
+                    $(".logo span, .gnb ul, .login_nav ul").css({
+                        "color":"#ffffff"
+                    });
+                    $(".dr_btn img").attr('src',"images/arrow_d_w.png")
+                    $(dash).css({"background-color":"#ffffff"});
+
+                    // scroll (0, 0)일때 마우스 아웃 상태
+                    /*
+                    $(".nav_box, .gnb2").mouseleave(function(){
+                    $(".nav_box").css({
+                        "background":"none" 
+                    });
+                    $(".logo span, .gnb ul, .login_nav ul").css({
+                            "color":"#ffffff"
+                    });
+                    $(".dr_btn img").attr('src',"images/arrow_d_w.png")
+                    $(dash).css({"background-color":"#ffffff"});
+                    $(".header").css({"height":"90px", "background":"none"});
+                    $(".gnb2").css({"display":"none"});
+                    });
+                    */
+                }
+            });
+
+            /* 메뉴바 마우스 오버(enter and leave) 이벤트 */
+            // enter
+            $(".gnb a, .gnb2").mouseenter(function(){
+                    holding = 1;
+                    console.log(holding);
+                    if(holding == 1){
+                    $(".nav_box").css({"background":"rgba(255, 255, 255, 1)" });
+                    $(".logo span, .gnb ul, .login_nav ul").css({"color":"#000"});
+                    $(".dr_btn img").attr('src',"images/arrow_d.png");
+                    $(dash).css({"background-color":"#000"});
+                    $(".header").css({"height":"100%", "background":"rgba(0,0,0, 0.5)"});
+                    $(".gnb2").css({"display":"block"});
+                    }
+            });
+            // leave
+            $(".nav_box, .gnb2").mouseleave(function(){
+                let top = $(window).scrollTop();
+                holding = 0;
+                console.log(holding);
+                console.log(top);
+                    $(".nav_box").css({"background":"rgba(255, 255, 255, 1)" });
+                    $(".logo span, .gnb ul, .login_nav ul").css({"color":"#000"});
+                    $(".dr_btn img").attr('src',"images/arrow_d.png")
+                    $(dash).css({"background-color":"#000"});
+                    $(".header").css({"height":"90px", "background":"none"});
+                    $(".gnb2").css({"display":"none"});
+                 if(top == 0){
+                    $(".nav_box").css({"background":"none" });
+                    $(".logo span, .gnb ul, .login_nav ul").css({"color":"#ffffff"});
+                    $(".dr_btn img").attr('src',"images/arrow_d_w.png")
+                    $(dash).css({"background-color":"#ffffff"});
+                    $(".header").css({"height":"90px", "background":"none"});
+                    $(".gnb2").css({"display":"none"});
+                }
+            });
+        });
+    </script>
+</body>
+</html>

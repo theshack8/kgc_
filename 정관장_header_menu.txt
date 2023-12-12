@@ -1,0 +1,44 @@
+ let dash = $('.nav_dash');
+            /* 메뉴바 마우스 오버(enter and leave) 이벤트 */
+            // enter
+            $(".gnb a, .gnb2").mouseenter(function(){
+                    $(".nav_box").css({"background":"rgba(255, 255, 255, 1)" });
+                    $(".logo span, .gnb ul, .login_nav ul").css({"color":"#000"});
+                    $(".dr_btn img").attr('src',"images/arrow_d.png");
+                    $(dash).css({"background-color":"#000"});
+                    $(".header").css({"height":"100%", "background":"rgba(0,0,0, 0.5)"});
+                    $(".gnb2").css({"display":"block"});
+                    $(".logo_category").css({"display":"none"});
+            });
+            // leave
+            $(".nav_box, .gnb2").mouseleave(function(){
+                    $(".header").css({"height":"90px", "background":"none"});
+                    $(".gnb2").css({"display":"none"});
+            });
+            
+            /* sub menu click*/
+            let active = 0;
+            $(".dr_btn").on('click', function(e){
+                e.preventDefault();
+                let arrow_d = $(".dr_btn img").attr('src');
+                let arrow_u = "images/arrow_u.png";
+                if(active == 0){
+                    active = 1;
+                    $(".dr_btn img").attr('src',"images/arrow_u.png");
+                    $(".logo_category").css({"display":"block"});
+                    $(".header").css({"height":"100%", "background":"rgba(0,0,0, 0.5)"});
+                    $(".gnb2").css({"display":"none"});
+                } else if(active == 1){
+                    active = 0;
+                    $(".dr_btn img").attr('src',"images/arrow_d.png");
+                    $(".logo_category").css({"display":"none"});
+                    $(".header").css({"height":"90px", "background":"none"});
+                    $(".gnb2").css({"display":"none"});
+                }
+                console.log(active);
+            });
+
+
+----------------------------------------------------------------------------
+
+

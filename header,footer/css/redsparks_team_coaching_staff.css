@@ -704,6 +704,25 @@ address {
     margin-top: 20px;
 }
 
+.toggle {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 340px;
+    height: 880px;
+    z-index: 500;
+    transition: all .5s ease-in-out;
+}
+
+.toggle_block {
+    display: block;
+    width: 340px;
+}
+
+.toggle_none {
+    display: none;
+}
+
 /* 미디어쿼리 */
 
 @media screen and (min-width: 1025px) {
@@ -715,10 +734,6 @@ address {
         min-width: 1025px;
         width: 71.25%;
         margin: 0 auto;
-    }
-
-    .toggle {
-        display: none;
     }
 
     .topmenu_bg {
@@ -750,16 +765,6 @@ address {
         z-index: 10;
     }
 
-    .toggle {
-        display: none;
-        position: fixed;
-        top: 0;
-        right: 0;
-        width: 340px;
-        height: 880px;
-        z-index: 500;
-        transition: all .5s ease-in-out;
-    }
 
     .toggle_header {
         background: #2438ef;
@@ -1040,7 +1045,6 @@ address {
     /* 토글 */
 
     .toggle {
-        display: none;
         position: fixed;
         top: 0;
         right: 0;

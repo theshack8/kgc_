@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coaching-staff</title>
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/redsparks_team_coaching_staff.css">
+    <script src="./js/jquery-3.7.1.min.js"></script>
+    <script  type="text/javascript">
+        $(document).ready(function(){
+            /* 메뉴바 마우스 오버(enter and leave) 이벤트 */
+            // enter
+            $(".gnb").mouseenter(function(){
+                holding = 1;
+                if(holding == 1){
+                    $(".logo_wrap_btn img").attr('src', "./images/arrow_d.png");
+                    $(".header").css({"height":"100%", "background":"rgba(0,0,0, 0.5)"});
+                    $(".gnb dl, .nav_bg").css({"display":"block"});
+                    $(".search_wrap, .logo_category").css({"display":"none"});
+                }
+            });
+            // leave
+            $(".header_wrap").mouseleave(function(){
+                holding = 0;
+                $(".logo_wrap_btn img").attr('src', "./images/arrow_d.png");
+                $(".header").css({"height":"0", "background":"none"});
+                $(".gnb dl, .nav_bg, .search_wrap, .logo_category").css({"display":"none"});
+            });
+
+            /* 헤더 */
+            let dash = $('.nav_dash');
+            let holding = 0;
+            let active2 = 0;
+            let holding2 = 0;
+
+            /* logo category click*/           
+            $(".logo_wrap_btn").on('click', function (e) {
+                e.preventDefault();
+                let arrow_d = $(".logo_wrap_img img").attr('src');
+                let arrow_u = "/images/arrow_u.png";
+                if (active2 == 0 && holding2 == 0) {
+                    holding2 = 1;
+                    active2 = 1;
+                    $(".logo_wrap_btn img").attr('src', "./images/arrow_u.png");
+                    $(".logo_category").css({ "display": "block" });
+                    $(".header").css({ "height": "100%", "background": "rgba(0,0,0, 0.5)" });
+                    $(".gnb dl, .nav_bg, .search_wrap").css({ "display": "none" });
+                } else if (active2 == 1) {
+                    holding2 = 0;
+                    active2 = 0;
+                    $(".logo_wrap_btn img").attr('src', "./images/arrow_d.png");
+                    $(".logo_category").css({ "display": "none" });
+                    $(".header").css({ "height": "0", "background": "none" });
+                    $(".gnb dl, .nav_bg, .search_wrap").css({ "display": "none" });
+                };
+                console.log(active2);
+            });
+
+            /* emb mouseleave */
+            $(".logo_category").mouseenter(function () {
+                $(".logo_wrap_btn img").attr('src', "./images/arrow_u.png");
+                $(".logo_category").css({ "display": "block" });
+                $(".header").css({ "height": "100%", "background": "rgba(0,0,0, 0.5)" });
+                $(".gnb dl").css({ "display": "none" });
+            });
+            $(".logo_category").mouseleave(function () {
+                holding2 = 0;
+                $(".logo_wrap_btn img").attr('src', "./images/arrow_d.png");
+                $(".logo_category").css({ "display": "none" });
+                $(".header").css({ "height": "90px", "background": "none" });
+                console.log(top);
+            });
+
+             /* 토글 메뉴 */
+            // click
+            $(".toggle_button").click(function(){
+                if (window.innerWidth <= 768){
+                    $(".toggle").css({"width":"100%"});
+                    $("body").css({"overflow":"hidden"});
+                } else {
+                    $("header").css({"display":"none", "background":"rgba(0,0,0, 0.5)"});
+                    $(".header_wrap").css({"background":"#fff" });
+                    $(".toggle").css({"display":"block"});
+                    $(".toggle").css({"width":"340px"});
+                    $("body").css({"overflow":"hidden"});
+                    $(".topmenu_bg").css({"display":"block"});
+                }
+            }).resize();
+            // close
+            $(".toggle_close").click(function(){
+                if (window.innerWidth <= 768){
+                    $(".toggle").css({"width":"0"});
+                    $("body").css({"overflow":""});
+                    $("header").css({"display":"block"});
+                } else {
+                    $(".header_wrap").css({"background":"#fff" });
+                    $("header").css({"display":"block"});
+                    $(".toggle").css({"width":"0"});
+                    $("body").css({"overflow":""});
+                    $(".topmenu_bg").css({"display":"none"});
+                }
+            }).resize();
+
+            // body 
+            $("body").mouseleave(function(){
+                if (window.innerWidth <= 768){
+                    $(".toggle").css({"width":"0"});
+                    $("body").css({"overflow":""});
+                    $(".search_wrap, .logo_category").css({"display":"none"});
+                } else {
+                    $("header").css({"display":"block"});
+                    $(".toggle").css({"width":"0"});                    
+                    $("body").css({"overflow":""});
+                    $(".topmenu_bg, .search_wrap, .logo_category").css({"display":"none"});
+                }
+            }).resize();
+
+            /* 검색창 */
+            let active = 0;
+            $(".search_button").on('click', function(){
+                if(active == 0){
+                    active = 1;
+                    $(".header_wrap").css({"background":"rgba(255, 255, 255, 1)" });
+                    $(dash).css({"background-color":"#000"});
+                    $(".logo_wrap span, .gnb > ul > li > a, .top_menu > ul > li > a").css({"color":"#000"});
+                    $(".logo_wrap_btn img").attr('src', "./images/arrow_d.png");
+                    $(".header").css({"height":"100%", "background":"rgba(0,0,0, 0.5)"});
+                    $(".search_wrap").css({"display":"block"});
+                    $(".gnb dl, .nav_bg, .logo_category").css({"display":"none"});
+                } else if(active == 1){
+                    active = 0;
+                    $(".header").css({"height":"100%", "background":"none"});
+                    $(".gnb dl, .nav_bg, .logo_category, .search_wrap").css({"display":"none"});
+                };
+                console.log(active);
+            });
+
+            /* search mouseleave */
+            $(".search_wrap").mouseenter(function () {
+                $(".logo_wrap_btn img").attr('src', "./images/arrow_d.png");
+                $(".header").css({ "height": "100%", "background": "rgba(0,0,0, 0.5)" });
+                $(".gnb dl, .logo_category").css({ "display": "none" });
+                $(".header_wrap").css({ "background": "#fff" });
+                $(dash).css({"background-color":"#000"});
+                $(".logo_wrap span, .gnb > ul > li > a, .top_menu > ul > li > a").css({"color":"#000"});
+            });
+            $(".search_wrap").mouseleave(function () {
+                $(".logo_wrap_btn img").attr('src', "./images/arrow_d.png");
+                $(".logo_category, .search_wrap, .gnb > dl").css({ "display": "none" });
+                $(".header").css({ "height": "90px", "background": "none" });
+                console.log(active + "검색창");
+            });
+
+            /* 상세보기 */
+            $(".detail_btn").click(function(){
+                    $(".person_detail").css({"display":"block"});
+                    $("body").css({"overflow":"hidden"});
+                    $(".body_bg_2").css({"display":"block"});
+                });
+            // close
+            $(".person_detail > a").click(function(){
+                    $(".person_detail").css({"display":"none"});
+                    $("body").css({"overflow":""});
+                    $(".body_bg_2").css({"display":"none"});
+                });
+
+            let pd_active = 0;
+            $("body_bg_2").on('click', function(){
+                if(pd_active == 0){
+                    pd_active = 1;
+                    $(".person_detail").css({"display":"block"});
+                    $("body").css({"overflow":"hidden"});
+                    $(".body_bg_2").css({"display":"block"});
+                } else if(pd_active == 1){
+                    pd_active = 0;
+                    $(".person_detail").css({"display":"none"});
+                    $("body").css({"overflow":""});
+                    $(".body_bg_2").css({"display":"none"});
+                }
+            });
+        });
+
+    </script>
+</head>
+<body>
+    <div class="body_bg_2"></div>
+    <div class="wrap">
+        <header class="header">
+            <div class="header_wrap">
+                <div class="logo_wrap">
+                    <a href="#none" class="logo_wrap_img"><img src="./images/rs_logo.png" alt=""></a>
+                    <a href="#none"><span>정관장</span></a>
+                    <a href="#none" class="logo_wrap_btn">
+                        <img src="./images/arrow_d.png" alt="">
+                    </a>
+                </div>
+                <div class="gnb">
+                    <ul>
+                        <li>
+                            <a href="#none">CLUB</a>
+                            <dl class="gnb_01">
+                                <dt>CLUB</dt>
+                                <dd><a href="#none">인사말</a></dd>
+                                <dd><a href="#none">소개</a></dd>
+                                <dd><a href="#none">연혁</a></dd>
+                                <dd><a href="#none">홈경기장 소개</a></dd>
+                                <dd><a href="#none">스폰서</a></dd>
+                            </dl>
+                        </li>
+                        <li>
+                            <a href="#none">TEAM</a>
+                            <dl class="gnb_02">
+                                <dt>TEAM</dt>
+                                <dd><a href="#none">코칭 스태프</a></dd>
+                                <dd><a href="#none">지원 스태프</a></dd>
+                                <dd><a href="#none">선수</a></dd>
+                            </dl>
+                        </li>
+                        <li>
+                            <a href="#none">STATS</a>
+                            <dl class="gnb_03">
+                                <dt>STATS</dt>
+                                <dd><a href="#none">선수 기록</a></dd>
+                                <dd><a href="#none">팀 기록</a></dd>
+                            </dl>
+                        </li>
+                        <li>
+                            <a href="#none">GAME</a>
+                            <dl class="gnb_04">
+                                <dt>GAME</dt>
+                                <dd><a href="#none">V-리그</a></dd>
+                                <dd><a href="#none">컵대회</a></dd>
+                            </dl>
+                        </li>
+                        <li>
+                            <a href="#none">MEDIA</a>
+                            <dl class="gnb_05">
+                                <dt>MEDIA</dt>
+                                <dd><a href="#none">SNS</a></dd>
+                            </dl>
+                        </li>
+                        <li>
+                            <a href="#none">TICKET</a>
+                            <dl class="gnb_06">
+                                <dt>TICKET</dt>
+                                <dd><a href="#none">단일권 구매</a></dd>
+                                <dd><a href="#none">티켓가격</a></dd>
+                                <dd><a href="#none">멤버십 구매</a></dd>
+                                <dd><a href="#none">티켓안내(공통)</a></dd>
+                                <dd><a href="#none">모바일티켓 이용방법</a></dd>
+                            </dl>
+                        </li>
+                    </ul>
+                </div>
+                <div class="nav_bg"></div>
+                <div class="top_menu">
+                    <ul>
+                        <li>
+                            <a href="#none"> LOGIN </a>
+                            <div class="nav_dash"></div>
+                        </li>
+                        <li  class="search_button">
+                            <a href="#none"> SEARCH </a>
+                            <div class="nav_dash"></div>
+                        </li>
+                        <li>
+                            <a href="#none"> KO </a>
+                            <div class="nav_dash"></div>
+                        </li>
+                        <li>
+                            <a href="#none"> EN </a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="mobile_menu">
+                    <ul>
+                        <li>
+                            <a href="#none">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" color="#222"><g id="ic-ticket-wh-md" clip-path="url(#clip0_2327_5801)"><path id="Vector" d="M9 5.25V18.75" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path><path id="Vector_2" d="M2.25 15.6741C2.25018 15.5013 2.30998 15.3339 2.4193 15.2002C2.52862 15.0665 2.68075 14.9745 2.85 14.94C3.52817 14.8023 4.13788 14.4344 4.57583 13.8986C5.01377 13.3627 5.25301 12.692 5.25301 12C5.25301 11.308 5.01377 10.6373 4.57583 10.1014C4.13788 9.56564 3.52817 9.19771 2.85 9.06C2.68075 9.02545 2.52862 8.93354 2.4193 8.7998C2.30998 8.66605 2.25018 8.49867 2.25 8.32594V5C2.25 4.80109 2.32902 4.61032 2.46967 4.46967C2.61032 4.32902 2.80109 4.25 3 4.25H21C21.1989 4.25 21.3897 4.32902 21.5303 4.46967C21.671 4.61032 21.75 4.80109 21.75 5V8.32594C21.7498 8.49867 21.69 8.66605 21.5807 8.7998C21.4714 8.93354 21.3192 9.02545 21.15 9.06C20.4718 9.19771 19.8621 9.56564 19.4242 10.1014C18.9862 10.6373 18.747 11.308 18.747 12C18.747 12.692 18.9862 13.3627 19.4242 13.8986C19.8621 14.4344 20.4718 14.8023 21.15 14.94C21.3192 14.9745 21.4714 15.0665 21.5807 15.2002C21.69 15.3339 21.7498 15.5013 21.75 15.6741V19C21.75 19.1989 21.671 19.3897 21.5303 19.5303C21.3897 19.671 21.1989 19.75 21 19.75H12H3C2.80109 19.75 2.61032 19.671 2.46967 19.5303C2.32902 19.3897 2.25 19.1989 2.25 19V15.6741Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></g><defs><clipPath id="clip0_2327_5801"><rect width="24" height="24" fill="currentColor"></rect></clipPath></defs></svg>
+                            </a>
+                        </li>
+                        <li  class="search_button">
+                            <a href="#none">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" color="#222"><g id="ic-srach-wh-md" clip-path="url(#clip0_2327_5817)"><path id="Vector" d="M10.5 18C14.6421 18 18 14.6421 18 10.5C18 6.35786 14.6421 3 10.5 3C6.35786 3 3 6.35786 3 10.5C3 14.6421 6.35786 18 10.5 18Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path><path id="Vector_2" d="M15.8035 15.8034L21 21" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></g><defs><clipPath id="clip0_2327_5817"><rect width="24" height="24" fill="currentColor"></rect></clipPath></defs></svg>
+                            </a>
+                        </li>
+                        <li class="toggle_button">
+                            <a href="#none">
+                                <svg width="24" height="24" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg" color="#222"><g id="ic-menu-wh-md" clip-path="url(#clip0_2413_54173)"><path id="Vector" d="M3.75 12.7852H20.25" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path><path id="Vector_2" d="M3.75 6.78516H20.25" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path><path id="Vector_3" d="M3.75 18.7852H20.25" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></g><defs><clipPath id="clip0_2413_54173"><rect width="24" height="24" fill="currentColor" transform="translate(0 0.785156)"></rect></clipPath></defs></svg>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="search_wrap">
+                    <div class="input_wrap">
+                        <input type="text" placeholder="검색어를 입력하세요">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" color="#222222" class="cursor-pointer"><g id="ic-srach-wh-md" clip-path="url(#clip0_2327_5817)"><path id="Vector" d="M10.5 18C14.6421 18 18 14.6421 18 10.5C18 6.35786 14.6421 3 10.5 3C6.35786 3 3 6.35786 3 10.5C3 14.6421 6.35786 18 10.5 18Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path><path id="Vector_2" d="M15.8035 15.8034L21 21" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></g><defs><clipPath id="clip0_2327_5817"><rect width="24" height="24" fill="currentColor"></rect></clipPath></defs></svg>
+                    </div>
+                </div>
+                <div class="logo_category">
+                    <div class="logo_cont_wrap">
+                        <div class="men_team_wrap">
+                            <p class="men_font">남자 배구단</p>
+                            <div class="men_emb_grop">
+                                <a href="#none">
+                                    <div class="m_emb">
+                                        <img src="./images/emblem_jumbos.png">
+                                    </div>
+                                    <p>대한한공</p>
+                                </a>
+                                <a href="#none">
+                                    <div class="m_emb">
+                                        <img src="./images/emblem_skywalkers.png">
+                                    </div>
+                                    <p>현대캐피탈</p>
+                                </a>
+                                <a href="#none">
+                                    <div class="m_emb">
+                                        <img src="./images/emblem_kepco.png">
+                                    </div>
+                                    <p>한국전력</p>
+                                </a>
+                                <a href="#none">
+                                    <div class="m_emb">
+                                        <img src="./images/emblem_hansae.png">
+                                    </div>
+                                    <p>우리카드</p>
+                                </a>
+                                <a href="#none">
+                                    <div class="m_emb">
+                                        <img src="./images/emblem_rushncash.png">
+                                    </div>
+                                    <p>OK금융그룹</p>
+                                </a>
+                                <a href="#none">
+                                    <div class="m_emb">
+                                        <img src="./images/emblem_kb.png">
+                                    </div>
+                                    <p>KB손해보험</p>
+                                </a>
+                                <a href="#none">
+                                    <div class="m_emb">
+                                        <img src="./images/emblem_bluefangs.png">
+                                    </div>
+                                    <p>삼성화재</p>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="hr"></div>
+                        <div class="womenteam_wrap">
+                            <p class="women_font">여자 배구단</p>
+                            <div class="women_emb_grop">
+                                <a href="#none">
+                                    <div class="w_emb">
+                                        <img src="./images/hipass_400x300.png">
+                                    </div>
+                                    <p>한국도로공사</p>
+                                </a>
+                                <a href="#none">
+                                    <div class="w_emb">
+                                        <img src="./images/emblem_pinkspiders.png">
+                                    </div>
+                                    <p>흥국생명</p>
+                                </a>
+                                <a href="#none">
+                                    <div class="w_emb">
+                                        <img src="./images/emblem_hyundai.png">
+                                    </div>
+                                    <p>현대건설</p>
+                                </a>
+                                <a href="#none">
+                                    <div class="w_emb" id="jung_emb">
+                                        <img src="./images/rs_logo.png">
+                                    </div>
+                                    <p>정관장</p>
+                                </a>
+                                <a href="#none">
+                                    <div class="w_emb">
+                                        <img src="./images/emblem_gscaltex.png">
+                                    </div>
+                                    <p>GS칼텍스</p>
+                                </a>
+                                <a href="#none">
+                                    <div class="w_emb">
+                                        <img src="./images/altos.png">
+                                    </div>
+                                    <p>IBK기업은행</p>
+                                </a>
+                                <a href="#none">
+                                    <div class="w_emb">
+                                        <img src="./images/emblem_peppers.png">
+                                    </div>
+                                    <p>페퍼저축은행</p>
+                                </a>
+                            </div>
+                        </div>
+                        <a href="#none">
+                            <div class="kovo_home">KOVO 홈으로 ></div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <main></main>
+        <footer>
+            <div class="footer_wrap">
+                <div class="kovo_logo">
+                    <img src="https://kovo.co.kr/assets/footer_logo.0eb2b735.svg" alt="">
+                </div>
+                <div class="footer_detail">
+                    <div class="term">
+                        <ul>
+                            <li><a href="#none">ANTIDOPING</a></li>
+                            <li><a href="#none">선수고충처리센터</a></li>
+                            <li><a href="#none">클린센터</a></li>
+                            <li><a href="#none">개인정보처리방침</a></li>
+                            <li><a href="#none">이용약관</a></li>
+                            <li><a href="#none">이메일무단수집거부</a></li>
+                            <li><a href="#none">오시는 길</a></li>
+                            <li><a href="#none">통합SNS</a></li>
+                        </ul>
+                    </div>
+                    <address>[03925] 서울특별시 마포구 월드컵북로 402 KGIT센터 11층 한국배구연맹 | TEL : 02-422-0110 | FAX : 02-418-0131
+                    </address>
+                    <P>Copyright (C) KOREAN VOLLEYBALL FEDERATION. ALL RIGHT RESERVED</P>
+                    <P class="term_p">KOVO 및 KOVO 소속 14개 팀로고, 마스코트, 엠블럼과 KOVO 소속 선수의 사진, 초상, 영상, 캐릭터 및 기타 KOVO의 지적재산권등을 무단으로 사용하는
+                        것은 상표법 및 저작권법에 의해 금지됩니다.</P>
+                </div>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>

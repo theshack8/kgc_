@@ -41,9 +41,11 @@ header {
     padding: 0 60px;
     height: 90px;
     transition: all 0.3s;
+    /* z-index: 50; */
 }
 
 .h_full_box {
+    /* z-index: 50; */
     height: 90px;
     background: #fff;
 }

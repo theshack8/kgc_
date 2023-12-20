@@ -72,6 +72,32 @@
                 console.log(top);
             });
 
+            /* emb hover*/
+            // let color = ['#5448AA','#0082CA','#ED0404','#292F85','#FF5724','#FDAD17','#0C4DA2','#102A86','#C408A1','#16193E','#D91833','#0B91A7','#0055A5','#DF0024']
+            color1 = ['#5448AA', '#0082CA', '#ED0404', '#292F85', '#FF5724', '#FDAD17', '#0C4DA2'];
+            color2 = ['#102A86', '#C408A1', '#16193E', '#D91833', '#0B91A7', '#0055A5', '#DF0024'];
+            let default_color = "#fff";
+            /* m_emb hover */
+            $(".m_emb").hover(function () {
+                let idx = $(this).parent().index();
+                let border_set = "5px solid " + color1[idx];
+                $(this).css({ border: border_set });
+                // console.log(border_set)
+            }, function () {
+                let border_set = "1px solid " + default_color;
+                $(this).css({ border: border_set });
+            });
+            /* w_emb hover */
+            $(".w_emb").hover(function () {
+                let idx = $(this).parent().index();
+                let border_set = "5px solid " + color2[idx];
+                $(this).css({ border: border_set });
+                // console.log(border_set)
+            }, function () {
+                let border_set = "1px solid " + default_color;
+                $(this).css({ border: border_set });
+            });
+
              /* 토글 메뉴 */
             // click
             $(".toggle_button").click(function(){

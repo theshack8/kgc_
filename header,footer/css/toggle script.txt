@@ -1,0 +1,36 @@
+/* 토글 메뉴 */
+            // click
+            $(".toggle_button").click(function(){
+                if (window.innerWidth <= 768){
+                    $("body").css({"overflow":"hidden"});
+                    $(".toggle").fadeIn("");
+                    $(".toggle").css({"width":"100%"});
+                    $(".toggle").css({"right":"0"});
+                    $(".toggle").css({"display":"block"});
+                } else if(window.innerWidth <= 1024){
+                    $("header").css({"height":"100%", "background":"rgba(0,0,0, 0.5)"});
+                    $(".header_wrap").css({"padding":"0", "background":"#fff" });
+                    $("body").css({"overflow":"hidden"});
+                    $(".toggle").fadeIn("");
+                    $(".toggle").css({"width":"340px"});
+                    $(".toggle").css({"right":"0"});
+                    $(".topmenu_bg").css({"display":"block"});
+                    $(".toggle").css({"display":"block"});
+                };
+            })
+            // close
+            $(".toggle_close").click(function(){
+                if (window.innerWidth <= 768){
+                    $("body").css({"overflow":""});
+                    $("header").css({"display":"block"});
+                    $(".toggle").fadeOut("");
+                    $(".toggle").css({"right":"-840px"});
+                } else if(window.innerWidth <= 1024){
+                    $(".header_wrap").css({"padding":"0 60px", "background":"#fff" });
+                    $("header").css({"height":"0", "display":"block"});
+                    $("body").css({"overflow":""});
+                    $(".topmenu_bg").css({"display":"none"});
+                    $(".toggle").fadeOut("");
+                    $(".toggle").css({"right":"-340px"});
+                };
+            })

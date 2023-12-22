@@ -431,7 +431,7 @@ input::placeholder {
     position: relative;
     min-width: 1024px;
     width: 71.25%;
-    margin: 0 auto;
+    margin: 0 auto 150px;
     overflow: hidden;
 }
 
@@ -532,7 +532,7 @@ h2 {
     font-weight: bold;
 }
 
-.person_detail {
+.person_detail_01, .person_detail_02, .person_detail_03, .person_detail_04 {
     position: fixed;
     top: 50%;
     left: 50%;
@@ -623,7 +623,7 @@ h2 {
     gap: 13px;
 }
 
-.person_detail > a {
+.person_detail_01 > a, .person_detail_02 > a, .person_detail_03 > a, .person_detail_04 > a {
     display: block;
     width: 436px;
     height: 36px;
@@ -633,7 +633,8 @@ h2 {
     justify-content: center;
     color: #fff;
     background: #d91833;
-    font-size: 14px;
+    font-size: 17px;
+    letter-spacing: 5px;
     border-bottom-left-radius: 15px;
     border-bottom-right-radius: 15px;
 }
@@ -972,7 +973,7 @@ address {
         font-size: 16px;
     }
 
-    .person_detail {
+    .person_detail_01, .person_detail_02, .person_detail_03, .person_detail_04 {
         width: 383px;
     }
 
@@ -993,7 +994,7 @@ address {
         width: 383px;
     }
 
-    .person_detail > a {
+    .person_detail_01 > a, .person_detail_02 > a, .person_detail_03 > a, .person_detail_04 > a {
         width: 352px;
     }
 
@@ -1238,7 +1239,7 @@ address {
         padding: 5px 0;
     }
 
-    .person_detail {
+    .person_detail_01, .person_detail_02, .person_detail_03, .person_detail_04 {
         width: 383px;
     }
 
@@ -1259,7 +1260,7 @@ address {
         width: 383px;
     }
 
-    .person_detail > a {
+    .person_detail_01 > a, .person_detail_02 > a, .person_detail_03 > a, .person_detail_04 > a {
         width: 352px;
     }
 

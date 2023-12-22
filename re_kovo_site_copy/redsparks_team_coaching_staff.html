@@ -188,31 +188,46 @@
             });
 
             /* 상세보기 */
-            $(".detail_btn").click(function(){
-                    $(".person_detail").css({"display":"block"});
+            $(".detail_btn_1").click(function(){
+                    $(".person_detail_01").css({"display":"block"});
                     $("body").css({"overflow":"hidden"});
                     $(".body_bg_2").css({"display":"block"});
-                });
+            });
+            $(".detail_btn_2").click(function(){
+                    $(".person_detail_02").css({"display":"block"});
+                    $("body").css({"overflow":"hidden"});
+                    $(".body_bg_2").css({"display":"block"});
+            });
+            $(".detail_btn_3").click(function(){
+                    $(".person_detail_03").css({"display":"block"});
+                    $("body").css({"overflow":"hidden"});
+                    $(".body_bg_2").css({"display":"block"});
+            });
+            $(".detail_btn_4").click(function(){
+                    $(".person_detail_04").css({"display":"block"});
+                    $("body").css({"overflow":"hidden"});
+                    $(".body_bg_2").css({"display":"block"});
+            });
             // close
-            $(".person_detail > a").click(function(){
-                    $(".person_detail").css({"display":"none"});
+            $(".person_detail_01 > a").click(function(){
+                    $(".person_detail_01").css({"display":"none"});
                     $("body").css({"overflow":""});
                     $(".body_bg_2").css({"display":"none"});
-                });
-
-            let pd_active = 0;
-            $("body_bg_2").on('click', function(){
-                if(pd_active == 0){
-                    pd_active = 1;
-                    $(".person_detail").css({"display":"block"});
-                    $("body").css({"overflow":"hidden"});
-                    $(".body_bg_2").css({"display":"block"});
-                } else if(pd_active == 1){
-                    pd_active = 0;
-                    $(".person_detail").css({"display":"none"});
+            });
+            $(".person_detail_02 > a").click(function(){
+                    $(".person_detail_02").css({"display":"none"});
                     $("body").css({"overflow":""});
                     $(".body_bg_2").css({"display":"none"});
-                }
+            });
+            $(".person_detail_03 > a").click(function(){
+                    $(".person_detail_03").css({"display":"none"});
+                    $("body").css({"overflow":""});
+                    $(".body_bg_2").css({"display":"none"});
+            });
+            $(".person_detail_04 > a").click(function(){
+                    $(".person_detail_04").css({"display":"none"});
+                    $("body").css({"overflow":""});
+                    $(".body_bg_2").css({"display":"none"});
             });
         });
 
@@ -545,28 +560,28 @@
                                             <img src="../images/ghj.png" alt="">
                                         </div>
                                         <p class="name">감독 <span>고희진</span></p>
-                                        <a href="#none">상세보기</a>
+                                        <a href="#none" class="detail_btn_1">상세보기</a>
                                     </li>
                                     <li>
                                         <div class="staff_img">
                                             <img src="../images/lsj.png" alt="">
                                         </div>
                                         <p class="name">코치 <span>이숙자</span></p>
-                                        <a href="#none" class="detail_btn">상세보기</a>
+                                        <a href="#none" class="detail_btn_2">상세보기</a>
                                     </li>
                                     <li>
                                         <div class="staff_img">
                                             <img src="../images/lgj.png" alt="">
                                         </div>
                                         <p class="name">코치 <span>이강주</span></p>
-                                        <a href="#none">상세보기</a>
+                                        <a href="#none" class="detail_btn_3">상세보기</a>
                                     </li>
                                     <li>
                                         <div class="staff_img">
                                             <img src="../images/kjh.png" alt="">
                                         </div>
                                         <p class="name">코치 <span>김정환</span></p>
-                                        <a href="#none">상세보기</a>
+                                        <a href="#none" class="detail_btn_4">상세보기</a>
                                     </li>
                                 </ul>
                             </div>
@@ -574,7 +589,58 @@
                     </div>
                 </div>
             </div>
-            <div class="person_detail">
+            <div class="person_detail_01">
+                <div class="person_scroll">
+                    <div class="person">
+                        <div class="p_img_wrap">
+                            <img src="../images/ghj.png" alt="고희진감독">
+                        </div>
+                        <span>정관장</span>
+                        <div class="p_p_wrap">
+                            <span class="p1 coach">고희진 감독</span>
+                            <p>생년월일 <span class="p1">1980.06.17</span></p>
+                        </div>
+                    </div>
+                    <div class="gap_bg"></div>
+                    <div class="detail">
+                        <div class="detail_1">
+                            <div>
+                            <p class="p1">신장 / 체중</p>
+                            <p>175cm / 0kg</p>
+                            </div>
+                            <div>
+                            <p class="p1">출신교</p>
+                            <p>경기대</p>
+                            </div>
+                        </div>
+                        <div class="detail_2">
+                            <p class="p1">주요 경력</p>
+                            <div>
+                                <p>1999 ~ 2007</p>
+                                <p>· 현대 그린폭스 여자배구단</p>
+                            </div>
+                            <div>
+                                <p>2007 ~ 2014</p>
+                                <p>· GS칼텍스 KIXX 배구단</p>
+                            </div>
+                            <div>
+                                <p>2012</p>
+                                <p>· 2012 런던올림픽 국가대표</p>
+                            </div>
+                            <div>
+                                <p>2014 ~ 2022</p>
+                                <p>· KBSN SPORTS 해설위원</p>
+                            </div>
+                            <div>
+                                <p>2022 ~</p>
+                                <p>· KGC 인삼공사 프로배구단 코치</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <a href="#none">확인</a>
+            </div>
+            <div class="person_detail_02">
                 <div class="person_scroll">
                     <div class="person">
                         <div class="p_img_wrap">
@@ -583,6 +649,108 @@
                         <span>정관장</span>
                         <div class="p_p_wrap">
                             <span class="p1 coach">이숙자 코치</span>
+                            <p>생년월일 <span class="p1">1980.06.17</span></p>
+                        </div>
+                    </div>
+                    <div class="gap_bg"></div>
+                    <div class="detail">
+                        <div class="detail_1">
+                            <div>
+                            <p class="p1">신장 / 체중</p>
+                            <p>175cm / 0kg</p>
+                            </div>
+                            <div>
+                            <p class="p1">출신교</p>
+                            <p>경기대</p>
+                            </div>
+                        </div>
+                        <div class="detail_2">
+                            <p class="p1">주요 경력</p>
+                            <div>
+                                <p>1999 ~ 2007</p>
+                                <p>· 현대 그린폭스 여자배구단</p>
+                            </div>
+                            <div>
+                                <p>2007 ~ 2014</p>
+                                <p>· GS칼텍스 KIXX 배구단</p>
+                            </div>
+                            <div>
+                                <p>2012</p>
+                                <p>· 2012 런던올림픽 국가대표</p>
+                            </div>
+                            <div>
+                                <p>2014 ~ 2022</p>
+                                <p>· KBSN SPORTS 해설위원</p>
+                            </div>
+                            <div>
+                                <p>2022 ~</p>
+                                <p>· KGC 인삼공사 프로배구단 코치</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <a href="#none">확인</a>
+            </div>
+            <div class="person_detail_03">
+                <div class="person_scroll">
+                    <div class="person">
+                        <div class="p_img_wrap">
+                            <img src="../images/lgj.png" alt="이강주코치">
+                        </div>
+                        <span>정관장</span>
+                        <div class="p_p_wrap">
+                            <span class="p1 coach">이강주 코치</span>
+                            <p>생년월일 <span class="p1">1980.06.17</span></p>
+                        </div>
+                    </div>
+                    <div class="gap_bg"></div>
+                    <div class="detail">
+                        <div class="detail_1">
+                            <div>
+                            <p class="p1">신장 / 체중</p>
+                            <p>175cm / 0kg</p>
+                            </div>
+                            <div>
+                            <p class="p1">출신교</p>
+                            <p>경기대</p>
+                            </div>
+                        </div>
+                        <div class="detail_2">
+                            <p class="p1">주요 경력</p>
+                            <div>
+                                <p>1999 ~ 2007</p>
+                                <p>· 현대 그린폭스 여자배구단</p>
+                            </div>
+                            <div>
+                                <p>2007 ~ 2014</p>
+                                <p>· GS칼텍스 KIXX 배구단</p>
+                            </div>
+                            <div>
+                                <p>2012</p>
+                                <p>· 2012 런던올림픽 국가대표</p>
+                            </div>
+                            <div>
+                                <p>2014 ~ 2022</p>
+                                <p>· KBSN SPORTS 해설위원</p>
+                            </div>
+                            <div>
+                                <p>2022 ~</p>
+                                <p>· KGC 인삼공사 프로배구단 코치</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <a href="#none">확인</a>
+            </div>
+            <div class="person_detail_04">
+                <div class="person_scroll">
+                    <div class="person">
+                        <div class="p_img_wrap">
+                            <img src="../images/kjh.png" alt="김정환코치">
+                        </div>
+                        <span>정관장</span>
+                        <div class="p_p_wrap">
+                            <span class="p1 coach">김정환 코치</span>
                             <p>생년월일 <span class="p1">1980.06.17</span></p>
                         </div>
                     </div>

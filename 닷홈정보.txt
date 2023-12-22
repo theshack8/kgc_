@@ -1,0 +1,14 @@
+무료 도메인(dothome)
+http://sooparkle.dothome.co.kr/
+
+예시)
+http://sooparkle.dothome.co.kr/redsparks_club_map.html
+
+
+112.175.184.59
+
+
+FileZila
+호스트 : 112.175.184.59
+호스명 : sooparkle
+비밀번호 : Greenish!23

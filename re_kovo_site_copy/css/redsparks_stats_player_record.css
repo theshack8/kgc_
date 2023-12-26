@@ -1,24 +1,40 @@
-  @font-face {
-    font-family: 'Pretendard-Regular';
-    src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
-    font-weight: 400;
-    font-style: normal;
-}
-
-html, body{
-  font-family: 'Pretendard-Regular';
-  font-size: 14px;
-}
-
 .tablet-unblock-p, .mobile-unblock{
   display: none;
 }
 
+.popup{
+  position: fixed;
+  top:50%;
+  left:50%;
+  transform: translate(-50%, -50%);
+  width: 70%;
+  min-width: 500px;
+  height: auto;
+  padding:2rem;
+  z-index: 100;
+  background: #fff;
+}
 
 
+.popup .grid-popup-header,
+.popup .grid-popup-body{
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+}
 
+.popup .grid-popup-header{
+  background: #a8a8a8;
+}
 
-
+.popup-background{
+  position: absolute;
+  top:0;
+  right:0;
+  left:0;
+  bottom:0;
+  background: rgb(0, 0, 0, 0.2);
+  z-index: 10;
+}
 
 
 .wrap {
@@ -41,6 +57,7 @@ header {
   padding: 0 60px;
   height: 90px;
   transition: all 0.3s;
+  border-bottom : 1px solid #e5e7ed;
 }
 
 .h_full_box {
@@ -468,7 +485,7 @@ main{
   width:130px;
   font-size: 16px;
   font-weight: 600;
-  color : #999999;
+  color : #666;
   line-height: 57px;
   letter-spacing: -1px;
   white-space: nowrap;
@@ -504,7 +521,7 @@ article{
 }
 
 .content div[data-pagination] span:nth-of-type(1){
-  color:#8c8c8c
+  color:#666
 }
 
 
@@ -540,7 +557,7 @@ margin-bottom: 24px;
   width:50%;
   text-align: center;
   background: #f28695;
-  color : #3f3f3f;
+  color : #000;
 }
 
 
@@ -566,9 +583,12 @@ form{
   background: #eee;
 }
 
+
 form select{
   height: 38px;
   border-radius: 5px;
+  border: 1px solid #e8e8e8;;
+  
 }
 
 .session-start,
@@ -854,6 +874,10 @@ address {
 
 
 @media screen and (min-width: 1025px) {
+  header, main, footer{
+    min-width : 1440px; 
+  }
+
   .mobile_menu {
       display: none;
   }
@@ -896,7 +920,7 @@ address {
   /* tablet main area */
   .top-banner{
     background: url(https://kovo.co.kr/assets/tablet_sub_banner_jeong.56840093.png) no-repeat;
-    
+
   }
 
   .top-banner h2{
@@ -1449,7 +1473,6 @@ input {
     }
     
     table td::before{
-      font-size: 1.2rem;
       font-weight: 600;
     }
 

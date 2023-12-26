@@ -1,16 +1,3 @@
-
-@font-face {
-  font-family: 'Pretendard-Regular';
-  src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
-  font-weight: 400;
-  font-style: normal;
-}
-
-html, body{
-  font-family: 'Pretendard-Regular';
-  font-size: 14px;
-}
-
 .wrap {
   width: 100%;
   padding-bottom: 144px;
@@ -22,6 +9,7 @@ header {
   z-index: 100;
   position: fixed;
   top:0;
+  border-bottom : 1px solid #e5e7ed;
 }
 
 .header_wrap {
@@ -414,7 +402,7 @@ main{
   min-width: 130px;
   font-size: 16px;
   font-weight: 600;
-  color : #999999;
+  color : #666;
   line-height: 57px;
   letter-spacing: -1px;
   white-space: nowrap;
@@ -479,7 +467,7 @@ margin-bottom: 24px;
 }
 
 .content .pagination span:nth-of-type(1){
-  color:#8c8c8c
+  color:#666;
 }
 
 .content > p{
@@ -582,13 +570,13 @@ footer {
   max-width: 1356px;
   display: flex;
   justify-content: space-between;
-  margin: 0 auto;
+  margin: 0 16px;
   align-items: center;
   gap: 40px;
 }
 
 .kovo_logo img {
-  max-width: 100%;
+  max-width: 160px;
   height: auto;
 }
 
@@ -609,9 +597,6 @@ footer {
   font-size: .875rem;
 }
 
-.footer_detail {
-  width: 1074px;
-}
 
 address {
   margin: 20px 0 0;
@@ -701,6 +686,10 @@ address {
 }
 
 @media screen and (min-width: 1025px) {
+  header, main, footer{
+    min-width: 1440px;
+  }
+
   .mobile_menu {
       display: none;
   }
@@ -930,6 +919,11 @@ input {
 
 .term ul{
   flex-wrap: wrap;
+}
+
+
+.kovo_logo img{
+  width:100px;
 }
 
 
@@ -1194,6 +1188,15 @@ footer{
 margin-top: 44px;;
 }
 
+.kovo_logo img{
+  width:100px;
+}
+
+.footer_wrap{
+  flex-direction: column;
+  align-items: start;
+}
+
 .term ul{
   flex-wrap: wrap;
 }
@@ -1214,7 +1217,6 @@ margin-top: 44px;;
   text-align: center;
 
   }
-
 
   .tab{
     border-bottom: 1px solid #eee;

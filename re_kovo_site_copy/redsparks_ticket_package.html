@@ -15,7 +15,7 @@
               holding = 1;
               if(holding == 1){
                   $(".logo_wrap_btn img").attr('src', "../images/arrow_d.png");
-                  $(".header").css({"height":"100%", "background":"rgba(0,0,0, 0.5)"});
+                  $(".header").css({ "background":"rgba(0,0,0, 0.5)"});
                   $(".gnb dl, .nav_bg").css({"display":"block"});
                   $(".search_wrap, .logo_category").css({"display":"none"});
               }
@@ -24,7 +24,7 @@
           $(".header_wrap").mouseleave(function(){
               holding = 0;
               $(".logo_wrap_btn img").attr('src', "../images/arrow_d.png");
-              $(".header").css({"height":"0", "background":"none"});
+              $(".header").css({ "background":"none"});
               $(".gnb dl, .nav_bg, .search_wrap, .logo_category").css({"display":"none"});
           });
 

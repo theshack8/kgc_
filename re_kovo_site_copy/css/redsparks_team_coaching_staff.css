@@ -33,6 +33,7 @@ header {
     padding: 0 60px;
     height: 90px;
     transition: all 0.3s;
+    border-bottom: 1px solid #e5e7ed;
 }
 
 .h_full_box {
@@ -416,7 +417,7 @@ input::placeholder {
     width: 130px;
     padding: 16px 0;
     text-align: center;
-    color: #999;
+    color: #666;
     font-weight: 600;
 }
 
@@ -463,7 +464,7 @@ h2 {
 }
 
 .color_gray {
-    color: #00000073;
+    color: #666;
 }
 
 /* staff img */
@@ -547,7 +548,7 @@ h2 {
 }
 
 .person_scroll {
-    height: 708px;
+    height: 645px;
     border-top-left-radius: 15px;
     border-top-right-radius: 15px;
     overflow-y: scroll;

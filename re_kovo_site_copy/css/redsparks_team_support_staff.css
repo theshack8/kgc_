@@ -405,7 +405,7 @@ input::placeholder {
     width: 130px;
     padding: 16px 0;
     text-align: center;
-    color: #999;
+    color: #666;
     font-weight: 600;
 }
 
@@ -452,7 +452,7 @@ h2 {
 }
 
 .color_gray {
-    color: #00000073;
+    color: #666;
 }
 
 /* staff img */

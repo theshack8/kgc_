@@ -18,8 +18,8 @@
             <header class="header">
                 <div class="header_wrap">
                     <div class="logo_wrap">
-                        <a href="http://sooparkle.dothome.co.kr/index.html" class="logo_wrap_img"><img src="../images/rs_logo.png" alt=""></a>
-                        <a href="http://sooparkle.dothome.co.kr/index.html"><span>정관장</span></a>
+                        <a href="http://sooparkle.dothome.co.kr/redsparks_main.html" class="logo_wrap_img"><img src="../images/rs_logo.png" alt=""></a>
+                        <a href="http://sooparkle.dothome.co.kr/redsparks_main.html"><span>정관장</span></a>
                         <a href="#none" class="logo_wrap_btn">
                             <img src="../images/arrow_d_w.png" alt="">
                         </a>
@@ -199,7 +199,7 @@
                                         </div>
                                         <p>현대건설</p>
                                     </a>
-                                    <a href="http://sooparkle.dothome.co.kr/index.html">
+                                    <a href="http://sooparkle.dothome.co.kr/redsparks_main.html">
                                         <div class="w_emb" id="jung_emb">
                                             <img src="../images/rs_logo.png">
                                         </div>
@@ -2790,6 +2790,7 @@
                     if(top > 0){
                         // header 메뉴 배경색
                         $(".header_wrap").css({"background":"rgba(255, 255, 255, 1)"});
+                        $(".header_wrap").css({"border-bottom":"1px solid #e5e7eb"});
                         // 메뉴 글자색
                         $(".logo_wrap span, .gnb > ul > li > a, .top_menu > ul > li > a").css({"color":"#000"});
                         // 로고 메뉴 다운버튼 이미지
@@ -2798,6 +2799,7 @@
                         $(dash).css({"background-color":"#000"});
                         $(".explain").fadeOut();
                     } else if(top == 0 && holding == 0 && w_width > 1024){
+                        $(".header_wrap").css({"border-bottom":"none"})
                         $(".header_wrap").css({"background":"none"});
                         $(".logo_wrap span, .gnb > ul > li > a, .top_menu > ul > li > a").css({"color":"#fff"});
                         $(".logo_wrap_img img").attr('src',"../images/rs_logo.png")
@@ -2830,6 +2832,7 @@
                 });
 
                 $(window).resize(function(){
+                    let top = $(window).scrollTop();
                     let w_width = window.innerWidth;
                     if(w_width <= 1024){
                         // header 메뉴 배경색
@@ -2843,7 +2846,7 @@
                         $(".logo_wrap_btn img").attr('src', "../images/arrow_d.png");
                         $(dash).css({"background-color":"#000"});
                         $(".explain").fadeOut();
-                    } else if (w_width > 1024){
+                    } else if (w_width > 1024 && top == 0){
                         // header 메뉴 배경색
                         $(".header_wrap").css({"background":"none"});
                         // 메뉴 글자색
@@ -2854,6 +2857,18 @@
                         $(".logo_wrap_btn img").attr('src', "../images/arrow_d_w.png");
                         $(dash).css({"background-color":"#fff"});
                         $(".explain").fadeIn();
+                    } else if (w_width > 1024 && top > 0){
+                        // header 메뉴 배경색
+                        $(".header_wrap").css({"background":"#fff"});
+                        $(".header_wrap").css({"border-bottom":"1px solid #e5e7eb"});
+                        // 메뉴 글자색
+                        $(".logo_wrap span, .gnb > ul > li > a, .top_menu > ul > li > a").css({
+                            "color":"#222"
+                        });
+                        // 로고 메뉴 다운버튼 이미지
+                        $(".logo_wrap_btn img").attr('src', "../images/arrow_d.png");
+                        $(dash).css({"background-color":"#222"});
+                        $(".explain").fadeOut();
                     }
                 })
 

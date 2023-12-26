@@ -1484,8 +1484,24 @@ address {
 /* 미디어쿼리 */
 
 @media screen and (min-width: 1025px) {
+    body {
+        overflow: scroll;
+    }
+
+    header {
+        min-width: 1440px;
+    }
+
     .mobile_menu {
         display: none;
+    }
+
+    .swiper_banner img {
+        min-width: 1440px;
+    }
+
+    footer {
+        min-width: 1440px;
     }
 
     .footer_wrap {
@@ -2232,7 +2248,7 @@ address {
 
     .event_wrap > a {
         font-size: 0.875rem;
-        top: 390px;
+        top: 10px;
         right: 12px;
     }
 

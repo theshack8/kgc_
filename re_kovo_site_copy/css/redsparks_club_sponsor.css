@@ -19,6 +19,7 @@ header {
     padding: 0 60px;
     height: 90px;
     transition: all 0.3s;
+    border-bottom: 1px solid #e5e7ed;
 }
 
 .h_full_box {
@@ -355,7 +356,7 @@ input::placeholder {
 .main{
     position: relative;
     z-index: 1;
-    margin-bottom: 144px;
+    margin-bottom: 450px;
 }
 .main_banner{
     display: flex;
@@ -391,7 +392,7 @@ input::placeholder {
     font-size: 16px;
     font-weight: 700;
     gap:16px;
-    color:#999999;
+    color:#666;
 }
 .ac_font{
     color:#000;
@@ -448,7 +449,7 @@ input::placeholder {
     display: none;
 }
 .gray_font{
-    color:#afafaf;
+    color:#666;
 }
 .content_h ul li span{
     font-size: 14px;
@@ -477,48 +478,55 @@ input::placeholder {
 }
 
 /* footer */
+
 footer {
-    height: 227px;
+    width: 100%;
     padding: 50px 0;
     box-sizing: border-box;
-    display: flex;
-    align-items: center;
     background: rgb(57, 58, 69);
+    /* display: none; */
 }
+
 .footer_wrap {
-    min-width: 1025px;
+    max-width: 1356px;
+    padding: 50px 0;
     display: flex;
-    width: 71.25%;
-    gap: 120px;
-    margin: 0 274px;
-    align-items: center;
-}
-.kovo_logo img {
-    width: 160px;
-    height: 127px;
-}
-.term ul {
-    width: 852px;
-    display: flex;
-    padding: 20px 0;
-    box-sizing: border-box;
     justify-content: space-between;
+    margin: 0 auto;
+    align-items: center;
+    gap: 40px;
 }
+
+.kovo_logo img {
+    max-width: 100%;
+    height: auto;
+}
+
+.term ul {
+    width: 100%;
+    display: inline-flex;
+    gap: 10px;
+}
+
 .term a {
     color: #fff;
     font-size: .9375rem;
-    font-weight: bold;
+    font-weight: 500;
 }
+
 .footer_detail address, .footer_detail p {
     color: #ffffff99;
     font-size: .875rem;
 }
+
 .footer_detail {
     width: 1074px;
 }
+
 address {
     margin: 20px 0 0;
 }
+
 .term_p {
     margin-top: 20px;
 }
@@ -605,6 +613,9 @@ address {
 /* 웹 사이즈 */
 
 @media screen and (min-width: 1025px) {
+    header, main, footer{
+        min-width: 1440px;
+    }
     .mobile_menu {
         display: none;
     }
@@ -763,10 +774,37 @@ address {
         height: 42px;
     }
 
+    /* sponsor */
+    .contents_wrap {
+        width: 89%;
+        min-width: 769px;
+    }
+    .content_h h2{
+        font-size: 32px;
+    }
+    .content_h ul li span{
+        font-size: 14px;
+        font-weight: lighter;
+    }
+    /* spon_cont*/
+    .spon_cont{
+        width: 80%;
+        margin: 0 auto;
+        padding-top:25px;
+    }
+    .spon_list a{
+        width: 130px;
+    }
+    .spon_list img{
+        width: 100px;
+    }
+    
+    /* footer */
+    footer {
+        padding: 40px 0;
+    }
 
-     /* footer */
-
-     .footer_wrap {
+    .footer_wrap {
         margin: 0 16px;
         padding: 40px 0;
     }
@@ -776,17 +814,19 @@ address {
     }
 
     .footer_detail {
-        width:100%;
+        width: 100%;
     }
 
     .term ul {
         width: 100%;
     }
+
     .term a {
         font-size: .875rem;
     }
 
-    .footer_detail address, .footer_detail p {
+    .footer_detail address,
+    .footer_detail p {
         font-size: .8125rem;
     }
 }
@@ -957,8 +997,34 @@ address {
         display: none;
     }
  
+    /* sponsor */
+    .contents_wrap {
+        width: 95%;
+    }
+    .content_h ul{
+        display: none;
+    }
+    .content_h h2{
+        font-size: 24px;
+        margin-top: 30px;
+    }
+     /* spon_cont*/
+     .spon_cont{
+        width: 80%;
+        margin: 0 auto;
+    }
+    .spon_list a{
+        width: 150px;
+    }
+    .spon_list img{
+        width: 50px;
+    }
 
     /* footer */
+
+    footer {
+        padding: 24px 0;
+    }
 
     .footer_wrap {
         flex-direction: column;
@@ -972,7 +1038,7 @@ address {
     }
 
     .footer_detail {
-        width:100%;
+        width: 100%;
     }
 
     .term ul {
@@ -980,11 +1046,13 @@ address {
         flex-wrap: wrap;
         gap: 10px;
     }
+
     .term a {
         font-size: 0.813rem;
     }
 
-    .footer_detail address, .footer_detail p {
+    .footer_detail address,
+    .footer_detail p {
         font-size: .688rem;
     }
 }

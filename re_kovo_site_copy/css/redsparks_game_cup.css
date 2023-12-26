@@ -19,6 +19,7 @@ header {
     padding: 0 60px;
     height: 90px;
     transition: all 0.3s;
+    border-bottom: 1px solid #e5e7ed;
 }
 
 .h_full_box {
@@ -357,7 +358,7 @@ input::placeholder {
 .main{
     position: relative;
     z-index: 1;
-    margin-bottom: 144px;
+    margin-bottom: 450px;
 }
 .main_banner{
     display: flex;
@@ -393,7 +394,7 @@ input::placeholder {
     font-size: 16px;
     font-weight: 700;
     gap:16px;
-    color:#999999;
+    color:#666;
 }
 .ac_font{
     color:#000;
@@ -450,7 +451,7 @@ input::placeholder {
     display: none;
 }
 .gray_font{
-    color:#afafaf;
+    color:#666;
 }
 .content_h ul li span{
     font-size: 14px;
@@ -497,7 +498,7 @@ fieldset{border:0; vertical-align:top;}
 fieldset{
     display: flex;
     justify-content: space-between;
-    margin-bottom: 15px;
+    margin-bottom: 15px !important;
     margin-inline-start: -7px;
     margin-inline-end: -7px;
 }
@@ -719,6 +720,9 @@ address {
 /* 웹 사이즈 */
 
 @media screen and (min-width: 1025px) {
+    header, main, footer{
+        min-width: 1440px;
+    }
     .mobile_menu {
         display: none;
     }

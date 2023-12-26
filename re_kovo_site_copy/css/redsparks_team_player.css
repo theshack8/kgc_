@@ -33,6 +33,7 @@ header {
     padding: 0 60px;
     height: 90px;
     transition: all 0.3s;
+    border-bottom: 1px solid #e5e7ed;
 }
 
 .h_full_box {
@@ -825,7 +826,7 @@ address {
     header, main, footer {
         min-width: 1440px;
     }
-    
+
     .mobile_menu {
         display: none;
     }

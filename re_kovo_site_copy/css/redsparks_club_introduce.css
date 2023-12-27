@@ -412,9 +412,8 @@ input::placeholder {
 
 /* content */
 .contents_wrap{
-    width: 71.25%;
+    max-width: 1000px;
     margin:0 auto;
-    min-width: 1024px;
 }
 .content_h{
     display: flex;
@@ -538,24 +537,22 @@ input::placeholder {
 */
 /* footer */
 footer {
-    height: 227px;
+    /* height: 227px; */
     padding: 50px 0;
     box-sizing: border-box;
-    display: flex;
-    align-items: center;
+    /* display: flex;
+    align-items: center; */
     background: rgb(57, 58, 69);
 }
 .footer_wrap {
-    min-width: 1025px;
+    max-width: 1124px;
     display: flex;
-    width: 71.25%;
-    gap: 120px;
-    margin: 0 274px;
+    justify-content: space-between;
+    margin: 0 auto;
     align-items: center;
 }
 .kovo_logo img {
     width: 160px;
-    height: 127px;
 }
 .term ul {
     width: 852px;
@@ -574,7 +571,7 @@ footer {
     font-size: .875rem;
 }
 .footer_detail {
-    width: 1074px;
+    width: 900px;
 }
 address {
     margin: 20px 0 0;
@@ -661,25 +658,11 @@ address {
     height: 8px;
 }
 
-
-
 /* media query */
 /* 웹 사이즈 */
-
-@media screen and (min-width: 1025px) {
-    header, main, footer{
-        min-width: 1440px;
-    }
     .mobile_menu {
         display: none;
     }
-
-    .footer_wrap {
-        min-width: 1025px;
-        width: 71.25%;
-        margin: 0 auto;
-    }
-
     .toggle {
         display: none;
     }
@@ -687,12 +670,10 @@ address {
     .topmenu_bg {
         display: none;
     }
-}
-
 
 /* 랩탑 사이즈 */
 
-@media screen and (min-width: 769px) and (max-width: 1024px){
+@media screen and (min-width: 769px) and (max-width: 1124px){
     body {
         position: relative;
     }
@@ -710,6 +691,7 @@ address {
     /* 헤더 */
 
     .h_full_box {
+        width: 100%;
         height: 57px;
     }
 
@@ -828,13 +810,14 @@ address {
         height: 42px;
     }
     
-    
+    .mobile_menu{
+        display: block;
+    }
     
     
     /* content */
     .contents_wrap{
         width: 89%;
-        min-width: 769px;
     }
     .content_h h2{
         font-size: 32px;
@@ -863,43 +846,45 @@ address {
         font-size: 14px;
     }
 
-     /* footer */
-
-     .footer_wrap {
-        margin: 0 16px;
-        padding: 40px 0;
-    }
-
-    .kovo_logo img {
-        width: 100px;
-    }
-
-    .footer_detail {
-        width:100%;
-    }
-
-    .term ul {
-        width: 100%;
-    }
-    .term a {
-        font-size: .875rem;
-    }
-
-    .footer_detail address, .footer_detail p {
-        font-size: .8125rem;
-    }
+        /* footer */
+        footer{
+            padding:20px 0;
+        }
+        .footer_wrap{
+            margin:0 16px;
+            display: block;
+        }
+    
+        .kovo_logo img {
+            width: 100px;
+        }
+    
+        .footer_detail {
+            width:100%;
+        }
+    
+        .term ul {
+            width: 100%;
+        }
+        .term a {
+            font-size: .875rem;
+        }
+    
+        .footer_detail address, .footer_detail p {
+            font-size: .8125rem;
+        }
 }
 
 
 /* 모바일 */
 
 @media screen and (max-width: 768px) {
-    body {
-        position: relative;
+    body{
+        min-width: 500px;
+        overflow-x: hidden;
     }
-
-     /* 토글 */
-
+    
+    /* 토글 */
      .toggle {
         display: none;
     }
@@ -910,6 +895,10 @@ address {
 
     .toggle_main li p {
         width: 100%;
+    }
+    
+    .mobile_menu{
+        display: block;
     }
     
     /* 헤더 */
@@ -924,7 +913,6 @@ address {
     }
 
     /* 헤더 로고 부분 */
-
     .logo_wrap {
         width: auto;
         height: 34px;
@@ -1035,11 +1023,9 @@ address {
         width: 56px;
         height: 42px;
     }
-
-    
-    
-    
-    
+    main{
+        min-width: 500px;
+    }
     /* banner */
     .main_banner{
         height: 109px;
@@ -1058,6 +1044,7 @@ address {
     /* content */
     .contents_wrap{
         width: 100%;
+        min-width: 500px;
     }
     .content{
         display: block;
@@ -1067,7 +1054,7 @@ address {
     }
     .content img{
         width: 100%;
-        height: 100%;
+        margin-right:0;
     }
     .content_h h2{
         font-size: 24px;
@@ -1076,14 +1063,15 @@ address {
     .content p{
         font-size: 13px;
     }
-
+    .bg_gray{
+        min-width: 500px;
+    }
      /* introduce */
      .introduce_title{
         font-size: 16px;
     }
     .intro_wrap img{
         width: 100%;
-        height:100%;
         margin-bottom: 20px;
     }
     .intro_wrap2 img{
@@ -1104,12 +1092,14 @@ address {
     }
 
     /* footer */
-
+    footer {
+        padding: 24px 0;
+    }
     .footer_wrap {
         flex-direction: column;
         gap: 15px;
         align-items: flex-start;
-        padding: 24px 16px;
+        padding: 0px 16px;
     }
 
     .kovo_logo img {

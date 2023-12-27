@@ -419,8 +419,8 @@ input::placeholder {
 
 .staff_wrap {
     position: relative;
-    min-width: 1024px;
-    width: 71.25%;
+    max-width: 1124px;
+    /* width: 71.25%; */
     margin: 0 auto;
     overflow: hidden;
 }
@@ -520,7 +520,7 @@ h2 {
 /* footer */
 
 footer {
-    width: 100%;
+    /* width: 100%; */
     padding: 50px 0;
     box-sizing: border-box;
     background: rgb(57, 58, 69);
@@ -528,7 +528,7 @@ footer {
 }
 
 .footer_wrap {
-    max-width: 1356px;
+    max-width: 1124px;
     display: flex;
     justify-content: space-between;
     margin: 0 auto;
@@ -559,7 +559,7 @@ footer {
 }
 
 .footer_detail {
-    width: 1074px;
+    width: 900px;
 }
 
 address {
@@ -647,32 +647,19 @@ address {
     height: 8px;
 }
 
-/* 미디어쿼리 */
-
-@media screen and (min-width: 1025px) {
-
-    header, main, footer {
-        min-width: 1440px;
-    }
-
-    .mobile_menu {
-        display: none;
-    }
-
-    .footer_wrap {
-        min-width: 1025px;
-        width: 71.25%;
-        margin: 0 auto;
-    }
-
-    .toggle {
-        display: none;
-    }
-
-    .topmenu_bg {
-        display: none;
-    }
+.mobile_menu {
+    display: none;
 }
+
+.toggle {
+    display: none;
+}
+
+.topmenu_bg {
+    display: none;
+}
+
+/* 미디어쿼리 */
 
 @media screen and (min-width: 768px) and (max-width: 1024px){
 
@@ -681,6 +668,10 @@ address {
     }
 
     /* 토글 */
+
+    .mobile_menu {
+        display: block;
+    }    
 
     .topmenu_bg {
         display: none;
@@ -822,7 +813,6 @@ address {
     /* staff wrap */
 
     .staff_wrap {
-        min-width: 96%;
         margin: auto 16px;
     }
 
@@ -888,6 +878,10 @@ address {
     }
 
     /* 토글 */
+
+    .mobile_menu {
+        display: block;
+    }    
 
     .toggle {
         display: none;
@@ -1068,7 +1062,7 @@ address {
     /* staff img */
 
     .support_staff_wrap {
-        margin-bottom: 50px;
+        margin: 0 16px 50px;
     }
     
     .support_staff_content ul {

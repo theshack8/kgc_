@@ -490,7 +490,7 @@ footer {
 }
 
 .footer_wrap {
-  max-width: 1356px;
+  max-width: 1124px;
   display: flex;
   justify-content: space-between;
   margin: 0 16px;
@@ -608,33 +608,23 @@ address {
   height: 8px;
 }
 
-@media screen and (min-width: 1025px) {
-  header, main, footer{
-    min-width: 1440px;
-  }
+.mobile_menu {
+  display: none;
+}
 
-  .mobile_menu {
-      display: none;
-  }
-
-  .footer_wrap {
-      min-width: 1025px;
-      width: 71.25%;
-      margin: 0 auto;
-  }
-
-  /* 토글 변경 12.21 */
-  .toggle {
-    display: none;
+/* 토글 변경 12.21 */
+.toggle {
+display: none;
 }
 
 .topmenu_bg {
-    display: none;
+display: none;
 }
 
-}
 
-@media (min-width:768px) and (max-width:1024px){
+
+
+@media (min-width:768px) and (max-width:1124px){
 
 /* tablet main area */
 .top-banner{
@@ -1025,12 +1015,19 @@ input {
   width:100px;
 }
 
+.mobile_menu {
+  display: block;
+}
+
 }
 
 @media  (max-width:768px){
 
-
 /* tablet main area */
+.mobile_menu {
+  display: block;
+}
+
 
 .top-banner h2{
   position: unset;
@@ -1081,6 +1078,8 @@ article{
 
 
 body {
+  min-width:500px;
+  overflow-x: hidden;
   position: relative;
 }
 

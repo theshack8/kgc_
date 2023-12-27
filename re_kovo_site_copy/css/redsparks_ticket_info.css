@@ -701,38 +701,33 @@ address {
 }
 
 
-@media screen and (min-width: 1025px) {
-  header, main, footer{
-    min-width :1440px;
-  }
-
-  .mobile_menu {
-      display: none;
-  }
-
-  .footer_wrap {
-      min-width: 1025px;
-      width: 71.25%;
-      margin: 0 auto;
-  }
+.mobile_menu {
+  display: none;
+}
 
 
 
-  /* 토글 변경 12.21 */
-  .toggle {
-    display: none;
+
+/* 토글 변경 12.21 */
+.toggle {
+display: none;
 }
 
 .topmenu_bg {
-    display: none;
+display: none;
 }
 
-}
 
-@media (min-width:768px) and (max-width:1024px){
+
+@media (min-width:768px) and (max-width:1124px){
   .mobile-unblock{
     display: none;
   }
+
+  .mobile_menu {
+    display: block;
+  }
+
 
 /* tablet main area */
 .top-banner{
@@ -954,6 +949,15 @@ input {
 @media  (max-width:768px){
 /* tablet main area */
 
+.mobile_menu {
+  display: block;
+}
+
+
+body{
+  min-width : 500px;
+  overflow-x: hidden;
+}
 
 
 .top-banner h2{

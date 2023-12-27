@@ -6,15 +6,6 @@ svg{
   cursor: pointer;
 }
 
-
-/* .popup[data-popup]{
-    position: fixed;
-  top:50%;
-  left:50%;
-  transform: translate(-50%, -50%);
-  width: 60%;
-} */
-
 .popup[data-popup="false"]{
   display: none;
 
@@ -104,9 +95,6 @@ svg{
   background: rgb(0, 0, 0, 0.2);
   z-index: 100;
 }
-
-
-
 
 
 
@@ -823,7 +811,7 @@ footer {
 }
 
 .footer_wrap {
-  max-width: 1356px;
+  max-width: 1124px;
   display: flex;
   justify-content: space-between;
   margin: 0 auto;
@@ -853,9 +841,6 @@ footer {
   font-size: .875rem;
 }
 
-.footer_detail {
-  width: 1074px;
-}
 
 address {
   margin: 20px 0 0;
@@ -944,85 +929,74 @@ address {
   height: 8px;
 }
 
+.mobile_menu {
+  display: none;
+}
 
 
-
-@media screen and (min-width: 1025px) {
-  header, main, footer{
-    min-width : 1440px; 
-  }
-
-  .mobile_menu {
-      display: none;
-  }
-
-  .footer_wrap {
-      min-width: 1025px;
-      width: 71.25%;
-      margin: 0 auto;
-  }
-
-  /* 토글 변경 12.21 */
-  .toggle {
-    display: none;
+.toggle {
+display: none;
 }
 
 .topmenu_bg {
-    display: none;
+display: none;
 }
 
-}
 
 
 
 
 /* media area */
 
-@media (min-width: 768px) and (max-width: 1024px){
-  .tablet-unblock-p{
-    display: inline-block;
-    font-size :16px;
-    font-weight: 600;
-    padding: 5px 0 ;
+@media (min-width: 768px) and (max-width: 1124px){
+.tablet-unblock-p{
+display: inline-block;
+font-size :16px;
+font-weight: 600;
+padding: 5px 0 ;
 
-    }
+}
 
-  .wrap{
-  padding-bottom: 80px;
-  }
+.mobile_menu {
+  display: block;
+}
 
-
-  /* tablet main area */
-  .top-banner{
-    background: url(https://kovo.co.kr/assets/tablet_sub_banner_jeong.56840093.png) no-repeat;
-
-  }
-
-  .top-banner h2{
-    position: unset;
-    padding:62px 0;
-    height:100%;
-    box-sizing: border-box;
-    text-align: center;
-    
-    transform: none;
-  }
+.wrap{
+padding-bottom: 80px;
+}
 
 
-    article{
-    min-width: auto;
-    width:auto;
-    margin : 0 16px;
-  }
+/* tablet main area */
+.top-banner{
+background: url(https://kovo.co.kr/assets/tablet_sub_banner_jeong.56840093.png) no-repeat;
+
+}
+
+.top-banner h2{
+position: unset;
+padding:62px 0;
+height:100%;
+box-sizing: border-box;
+text-align: center;
+
+transform: none;
+}
 
 
-  .session-end{
-    margin-top:10px;
-  }
+article{
+min-width: auto;
+width:auto;
+margin : 0 16px;
+}
 
-  .content > p{
-    font-size :13px;
-  }
+
+.session-end{
+margin-top:10px;
+}
+
+.content > p{
+font-size :13px;
+}
 
 
 
@@ -1395,6 +1369,13 @@ input {
     
   }
 
+  .mobile_menu {
+    display: block;
+  }
+  body{
+    min-width: 500px;
+    overflow-x: hidden;
+  }
 
   .wrap{
     padding-bottom: 80px;
@@ -1564,6 +1545,71 @@ input {
 
 
 
+  
+  .popup .grid{
+    height: 500px;
+    overflow-y: scroll
+    }
+
+    .popup .grid-popup-header{
+      display: none;
+    }
+
+    .popup .grid-popup-body{
+      grid-template-columns: 1fr;
+      border-top:1px solid ;
+      border-bottom:1px solid ;
+      margin-bottom: 20px;
+    }
+
+    .popup .grid-popup-body > div{
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+    }
+
+    .grid-popup-body > div:nth-of-type(1):before,
+    .grid-popup-body > div:nth-of-type(2):before,
+    .grid-popup-body > div:nth-of-type(3)::before,
+    .grid-popup-body > div:nth-of-type(4)::before,
+    .grid-popup-body > div:nth-of-type(5)::before,
+    .grid-popup-body > div:nth-of-type(6)::before,
+    .grid-popup-body > div:nth-of-type(7)::before,
+    .grid-popup-body > div:nth-of-type(8):before{
+      margin-right: 1.5rem;
+      font-weight: 700;
+    }
+
+
+    .grid-popup-body > div:nth-of-type(1):before{
+      content: "시즌 :";
+    }
+    .grid-popup-body > div:nth-of-type(2):before{
+      content: "팀 :";
+    }
+    .grid-popup-body > div:nth-of-type(3)::before{
+      content:"경기수 :";
+    }
+    .grid-popup-body > div:nth-of-type(4)::before{
+      content:"세트수 :";
+    }
+    .grid-popup-body > div:nth-of-type(5)::before{
+      content:"공격 :";
+    }
+    .grid-popup-body > div:nth-of-type(6)::before{
+      content: "블로킹 :";
+    }
+    .grid-popup-body > div:nth-of-type(7)::before{
+      content: "서브 :";
+    }
+    .grid-popup-body > div:nth-of-type(8):before{
+      content:"득점 :";
+    }
+
+  .popup button{
+    position: fixed;
+    bottom: 0;
+  }
+
 
 
 
@@ -1717,9 +1763,20 @@ input {
     margin-top: 44px;;
   }
   
+  .kovo_logo img{
+    width:100px;
+  }
+  
   .term ul{
     flex-wrap: wrap;
   }
+  
+  .footer_wrap{
+    flex-direction: column;
+    align-items: start;
+    margin : 0 16px;
+  }
+  
 
   .top-banner{
     display: block;

@@ -368,7 +368,7 @@ main{
 
 .top-banner h2{
   color:#fff;
-  font-size: 44px;
+  font-size: 50px;
   font-weight: bold;
   position: absolute;;
   top: 50%;
@@ -425,7 +425,7 @@ main{
 .tab ul .activated{
   text-align: center;
   width:140px;
-  font-size: 1.15rem;
+  font-size: 16px;
   font-weight: 600;
   color : #000;
 
@@ -594,7 +594,7 @@ footer {
 }
 
 .footer_wrap {
-  max-width: 1356px;
+  max-width: 1124px;
   display: flex;
   justify-content: space-between;
   margin: 0 16px;
@@ -713,45 +713,32 @@ address {
   height: 8px;
 }
 
+.mobile_menu {
+  display: none;
+}
 
 
-@media screen and (min-width: 1025px) {
-  header, main, footer{
-    min-width: 1440px;
-  }
-  .mobile_menu {
-      display: none;
-  }
-
-  .footer_wrap {
-      min-width: 1025px;
-      width: 71.25%;
-      margin: 0 auto;
-  }
-
-  /* 토글 변경 12.21 */
-  .toggle {
-    display: none;
+/* 토글 변경 12.21 */
+.toggle {
+display: none;
 }
 
 .topmenu_bg {
-    display: none;
+display: none;
 }
 
-}
 
-
-@media (min-width :768px) and (max-width:1024px){
+@media (min-width :768px) and (max-width:1124px){
   .tablet-unblock{
     display: block;
   }
 
 
-        /* tablet main area */
-        .top-banner{
-      background: url(https://kovo.co.kr/assets/tablet_sub_banner_jeong.56840093.png) no-repeat;
-      
-    }
+    /* tablet main area */
+    .top-banner{
+  background: url(https://kovo.co.kr/assets/tablet_sub_banner_jeong.56840093.png) no-repeat;
+  
+}
 
     .top-banner h2{
       position: unset;
@@ -1173,14 +1160,24 @@ input {
   width:100px;
 }
 
+.mobile_menu {
+  display: block;
+}
+
 }
 
 
 @media  (max-width:768px){
+  .mobile_menu {
+    display: block;
+  }
 
-/* tablet main area */
-
-
+  body{
+    min-width: 500px;
+    overflow-x: hidden;
+  }
+  
+  /* tablet main area */
 .wrap{
   padding-bottom: 80px;
 }

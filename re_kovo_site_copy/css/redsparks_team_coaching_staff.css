@@ -1028,6 +1028,8 @@ address {
 
     body {
         position: relative;
+        min-width: 500px;
+        overflow-x: hidden;
     }
 
     /* 토글 */

@@ -2,7 +2,7 @@
 
 body {
     width: 100%;
-    overflow-x: hidden;
+    overflow: scroll;
 }
 
 .main_bg {
@@ -100,32 +100,32 @@ header {
 
 .gnb_01 {
     position: absolute;
-    left: 470px;
+    left: 23%;
 }
 
 .gnb_02 {
     position: absolute;
-    left: 630px;
+    left: 33%;
 }
 
 .gnb_03 {
     position: absolute;
-    left: 790px;
+    left: 43%;
 }
 
 .gnb_04 {
     position: absolute;
-    left: 950px;
+    left: 53%;
 }
 
 .gnb_05 {
     position: absolute;
-    left: 1110px;
+    left: 63%;
 }
 
 .gnb_06 {
     position: absolute;
-    left: 1275px;
+    left: 73%;
 }
 
 .gnb dt {
@@ -161,7 +161,7 @@ header {
 /* top menu */
 
 .top_menu ul {
-    width: 227px;
+    width: 210px;
     display: flex;
     justify-content: space-between;
 }
@@ -169,10 +169,6 @@ header {
 .top_menu > ul > li > a {
     font-size: .9375rem;
     color: #fff;
-}
-
-.top_menu > ul > li:last-child::after {
-    display: none;
 }
 
 .nav_dash{
@@ -184,7 +180,13 @@ header {
     background: #fff;
 }
 
+
+
 /* mobile menu */
+
+.mobile_menu {
+    display: none;
+}
 
 .mobile_menu ul {
     display: flex;
@@ -1483,43 +1485,7 @@ address {
 
 /* 미디어쿼리 */
 
-@media screen and (min-width: 1025px) {
-    body {
-        overflow: scroll;
-    }
-
-    header {
-        min-width: 1440px;
-    }
-
-    .mobile_menu {
-        display: none;
-    }
-
-    .swiper_banner img {
-        min-width: 1440px;
-    }
-
-    footer {
-        min-width: 1440px;
-    }
-
-    .footer_wrap {
-        min-width: 1025px;
-        width: 71.25%;
-        margin: 0 auto;
-    }
-
-    .toggle {
-        display: none;
-    }
-
-    .topmenu_bg {
-        display: none;
-    }
-}
-
-@media screen and (min-width: 769px) and (max-width: 1024px){
+@media screen and (min-width: 769px) and (max-width: 1125px){
 
     body {
         position: relative;
@@ -1533,6 +1499,10 @@ address {
 
     .toggle {
         display: none;
+    }
+
+    .mobile_menu {
+        display: block;
     }
 
     /* 헤더 */
@@ -2020,6 +1990,10 @@ address {
 
     .toggle_main li p {
         width: 100%;
+    }
+
+    .mobile_menu {
+        display: block;
     }
     
     /* 헤더 */

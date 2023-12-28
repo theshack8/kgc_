@@ -91,16 +91,12 @@
                                 <a href="#none"> LOGIN </a>
                                 <div class="nav_dash"></div>
                             </li>
+                            <li>
+                                <a href="#none"> SIGN UP </a>
+                                <div class="nav_dash"></div>
+                            </li>
                             <li class="search_button">
                                 <a href="#none"> SEARCH </a>
-                                <div class="nav_dash"></div>
-                            </li>
-                            <li>
-                                <a href="#none"> KO </a>
-                                <div class="nav_dash"></div>
-                            </li>
-                            <li>
-                                <a href="#none"> EN </a>
                             </li>
                         </ul>
                     </div>
@@ -2605,7 +2601,7 @@
                         $(dash).css({"background-color":"#000"});
                         $(".logo_wrap span, .gnb > ul > li> a, .top_menu > ul > li > a").css({ "color": "#000" });
                         $(".explain").fadeOut();
-                    } else if (active2 == 1  && top == 0 && window.innerWidth > 1024) {
+                    } else if (active2 == 1  && top == 0 && window.innerWidth > 1124) {
                         holding2 = 0;
                         active2 = 0;
                         $(".logo_wrap_btn img").attr('src', "../images/arrow_d_w.png");
@@ -2616,7 +2612,7 @@
                         $(dash).css({"background-color":"#fff"});
                         $(".logo_wrap span, .gnb > ul > li> a, .top_menu > ul > li > a").css({ "color": "#fff" });
                         $(".explain").fadeIn();
-                    } else if (active2 == 1  && top == 0 && window.innerWidth <= 1024) {
+                    } else if (active2 == 1  && top == 0 && window.innerWidth <= 1124) {
                         holding2 = 0;
                         active2 = 0;
                         $(".logo_wrap_btn img").attr('src', "../images/arrow_d.png");
@@ -2653,14 +2649,14 @@
                 $(".logo_category").mouseleave(function () {
                     let top = $(window).scrollTop();
                     holding2 = 0;
-                    if(top == 0 && window.innerWidth > 1024){
+                    if(top == 0 && window.innerWidth > 1124){
                         $(".logo_wrap_btn img").attr('src', "../images/arrow_d_w.png");
                         $(".logo_category").css({ "display": "none" });
                         $(".header_wrap").css({ "background": "none" });
                         $(".logo_wrap span, .gnb > ul > li > a, .top_menu > ul > li > a").css({"color":"#fff"});
                         $(dash).css({"background-color":"#fff"});
                         $(".header").css({ "height": "90px", "background": "none" });
-                    } else if(top == 0 && window.innerWidth <= 1024){
+                    } else if(top == 0 && window.innerWidth <= 1124){
                         $(".logo_wrap_btn img").attr('src', "../images/arrow_d.png");
                         $(".logo_category").css({ "display": "none" });
                         $(".header_wrap").css({ "background": "#fff" });
@@ -2692,7 +2688,7 @@
                         $(".header").css({"height":"100%", "background":"rgba(0,0,0, 0.5)"});
                         $(".search_wrap").css({"display":"block"});
                         $(".gnb dl, .nav_bg, .logo_category").css({"display":"none"});
-                    } else if(active == 1 && top == 0 && window.innerWidth > 1024){
+                    } else if(active == 1 && top == 0 && window.innerWidth > 1124){
                         active = 0;
                         $(".header_wrap").css({"background":"none" });
                         $(dash).css({"background-color":"#fff"});
@@ -2701,7 +2697,7 @@
                         $(".header").css({"height":"100%", "background":"none"});
                         $(".search_wrap").css({"display":"none"});
                         $(".gnb dl, .nav_bg, .logo_category").css({"display":"none"});
-                    } else if(active == 1 && top == 0 && window.innerWidth <= 1024){
+                    } else if(active == 1 && top == 0 && window.innerWidth <= 1124){
                         active = 0;
                         $(".header_wrap").css({"background":"#fff" });
                         $(dash).css({"background-color":"#222"});
@@ -2710,7 +2706,7 @@
                         $(".header").css({"height":"100%", "background":"none"});
                         $(".search_wrap").css({"display":"none"});
                         $(".gnb dl, .nav_bg, .logo_category").css({"display":"none"});
-                    } else if(active == 1 && top > 0 && window.innerWidth > 1024){
+                    } else if(active == 1 && top > 0 && window.innerWidth > 1124){
                         active = 0;
                         $(".header_wrap").css({"background":"rgba(255, 255, 255, 1)" });
                         $(dash).css({"background-color":"#000"});
@@ -2720,7 +2716,7 @@
                         $(".header").css({"height":"100%", "background":"none"});
                         $(".search_wrap").css({"display":"none"});
                         $(".gnb dl, .nav_bg, .logo_category").css({"display":"none"});
-                    } else if(active == 1 && top > 0 && window.innerWidth <= 1024){
+                    } else if(active == 1 && top > 0 && window.innerWidth <= 1124){
                         active = 0;
                         $(".header_wrap").css({"background":"rgba(255, 255, 255, 1)" });
                         $(dash).css({"background-color":"#000"});
@@ -2757,7 +2753,7 @@
                 $(".search_wrap").mouseleave(function () {
                     let top = $(window).scrollTop();
                     active = 0;
-                    if(top == 0 && window.innerWidth > 1024){
+                    if(top == 0 && window.innerWidth > 1124){
                         $(".logo_wrap_btn img").attr('src', "../images/arrow_d_w.png");
                         $(".logo_category, .search_wrap").css({ "display": "none" });
                         $(".header_wrap").css({ "background": "none" });
@@ -2772,7 +2768,7 @@
                         $(".header_wrap").css({ "background": "#fff" });
                         $(dash).css({"background-color":"#000"});
                         $(".logo_wrap span, .gnb > ul > li > a, .top_menu > ul > li > a").css({ "color": "#000" });
-                    } else if(top == 0 && window.innerWidth <= 1024){
+                    } else if(top == 0 && window.innerWidth <= 1124){
                         $(".logo_wrap_btn img").attr('src', "../images/arrow_d.png");
                         $(".header").css({ "height": "90px", "background": "none" });
                         $(".logo_category, .search_wrap").css({ "display": "none" });
@@ -2799,7 +2795,7 @@
                         $(".logo_wrap_btn img").attr('src', "../images/arrow_d.png");
                         $(dash).css({"background-color":"#000"});
                         $(".explain").fadeOut();
-                    } else if(top == 0 && holding == 0 && w_width > 1024){
+                    } else if(top == 0 && holding == 0 && w_width > 1124){
                         $(".header_wrap").css({"border-bottom":"none"})
                         $(".header_wrap").css({"background":"none"});
                         $(".logo_wrap span, .gnb > ul > li > a, .top_menu > ul > li > a").css({"color":"#fff"});
@@ -2807,7 +2803,7 @@
                         $(".logo_wrap_btn img").attr('src', "../images/arrow_d_w.png");
                         $(dash).css({"background-color":"#ffffff"});
                         $(".explain").fadeIn();
-                    } else if(top == 0 && holding == 0 && w_width <= 1024){
+                    } else if(top == 0 && holding == 0 && w_width <= 1124){
                         $(".explain").fadeIn();
                     } 
                     if(holding2 == 1){
@@ -2835,7 +2831,7 @@
                 $(window).resize(function(){
                     let top = $(window).scrollTop();
                     let w_width = window.innerWidth;
-                    if(w_width <= 1024){
+                    if(w_width <= 1124){
                         // header 메뉴 배경색
                         $(".header_wrap").css({"background":"#fff"});
                         // 메뉴 글자색
@@ -2847,7 +2843,7 @@
                         $(".logo_wrap_btn img").attr('src', "../images/arrow_d.png");
                         $(dash).css({"background-color":"#000"});
                         $(".explain").fadeOut();
-                    } else if (w_width > 1024 && top == 0){
+                    } else if (w_width > 1124 && top == 0){
                         // header 메뉴 배경색
                         $(".header_wrap").css({"background":"none"});
                         // 메뉴 글자색
@@ -2858,7 +2854,7 @@
                         $(".logo_wrap_btn img").attr('src', "../images/arrow_d_w.png");
                         $(dash).css({"background-color":"#fff"});
                         $(".explain").fadeIn();
-                    } else if (w_width > 1024 && top > 0){
+                    } else if (w_width > 1124 && top > 0){
                         // header 메뉴 배경색
                         $(".header_wrap").css({"background":"#fff"});
                         $(".header_wrap").css({"border-bottom":"1px solid #e5e7eb"});
@@ -2901,7 +2897,7 @@
                         $(dash).css({"background-color":"#000"});
                         $(".header").css({"height":"90px", "background":"none"});
                         $(".gnb dl, .nav_bg, .search_wrap").css({"display":"none"});
-                    if(top == 0 && window.innerWidth > 1024){
+                    if(top == 0 && window.innerWidth > 1124){
                         $(".header_wrap").css({"background":"none" });
                         $(".logo_wrap span, .gnb > ul > li > a, .top_menu > ul > li > a").css({"color":"#ffffff"});
                         $(".logo_wrap_img img").attr('src',"../images/rs_logo_2.png");
@@ -2936,7 +2932,7 @@
                         $(".toggle").css({"right":"0"});
                         $(".toggle").css({"display":"block"});
                         $(".logo_category, .search_wrap").css({"display":"none"});
-                    } else if(window.innerWidth <= 1024){
+                    } else if(window.innerWidth <= 1124){
                         $("header").css({"height":"100%", "background":"rgba(0,0,0, 0.5)"});
                         $(".header_wrap").css({"padding":"0", "background":"#fff" });
                         $("body").css({"overflow":"hidden"});
@@ -2955,7 +2951,7 @@
                         $("header").css({"display":"block"});
                         $(".toggle").fadeOut("");
                         $(".toggle").css({"right":"-840px"});
-                    } else if(window.innerWidth <= 1024){
+                    } else if(window.innerWidth <= 1124){
                         $(".header_wrap").css({"padding":"0 60px", "background":"#fff" });
                         $("header").css({"height":"0", "display":"block"});
                         $("body").css({"overflow":""});

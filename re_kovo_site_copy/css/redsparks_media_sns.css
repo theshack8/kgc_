@@ -143,18 +143,14 @@ header {
 /* top menu */
 
 .top_menu ul {
-    width: 227px;
+    width: 210px;
     display: flex;
     justify-content: space-between;
 }
 
 .top_menu > ul > li > a {
     font-size: .9375rem;
-    color: #222;
-}
-
-.top_menu > ul > li:last-child::after {
-    display: none;
+    color: #fff;
 }
 
 .nav_dash{
@@ -163,7 +159,7 @@ header {
     content: "";
     width: 1px;
     height: 12px;
-    background: #222;
+    background: #fff;
 }
 
 /* mobile menu */

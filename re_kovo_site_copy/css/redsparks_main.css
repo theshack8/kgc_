@@ -1165,6 +1165,10 @@ main > img {
     height: 474px;
 }
 
+.shorts_img p:hover {
+    filter: brightness(200%);
+}
+
 .p1, .p2, .p3, .p4, .p5 {
     /* display: block; */
     width: 100%;

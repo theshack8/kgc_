@@ -30,7 +30,7 @@ css
 
 .top_menu > ul > li > a {
     font-size: .9375rem;
-    color: #fff;
+    color: #222;
 }
 
 .nav_dash{
@@ -39,7 +39,7 @@ css
     content: "";
     width: 1px;
     height: 12px;
-    background: #fff;
+    background: #222;
 }
 
 .gnb_01 {

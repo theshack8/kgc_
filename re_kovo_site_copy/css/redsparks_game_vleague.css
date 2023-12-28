@@ -85,32 +85,32 @@ header {
 
 .gnb_01 {
     position: absolute;
-    left: 470px;
+    left: 23%;
 }
 
 .gnb_02 {
     position: absolute;
-    left: 630px;
+    left: 33%;
 }
 
 .gnb_03 {
     position: absolute;
-    left: 790px;
+    left: 43%;
 }
 
 .gnb_04 {
     position: absolute;
-    left: 950px;
+    left: 53%;
 }
 
 .gnb_05 {
     position: absolute;
-    left: 1110px;
+    left: 63%;
 }
 
 .gnb_06 {
     position: absolute;
-    left: 1275px;
+    left: 73%;
 }
 
 .gnb dt {
@@ -143,7 +143,7 @@ header {
 /* top menu */
 
 .top_menu ul {
-    width: 227px;
+    width: 210px;
     display: flex;
     justify-content: space-between;
 }
@@ -151,10 +151,6 @@ header {
 .top_menu > ul > li > a {
     font-size: .9375rem;
     color: #222;
-}
-
-.top_menu > ul > li:last-child::after {
-    display: none;
 }
 
 .nav_dash{
@@ -471,7 +467,7 @@ input::placeholder {
     color:#222222;
 }
 .l_tab_list div{
-    width: 130px;
+    width: 157px;
     height: 58px;
     background: #ffffff;
     padding-top: 16px;
@@ -485,25 +481,28 @@ input::placeholder {
 }
 
 /* form tag */
+/*
 .l_select{
-    width: 264px;
+    /*width: 264px;
 }
 .l_day{
-    width: 136px;
+    /*width: 136px;
 }
 .l_round{
-    width: 136px;
+    /*width: 136px;
 }
+*/
 fieldset{border:0; vertical-align:top;}
 fieldset{
     width: 1100px;
     display: flex;
     justify-content: space-between;
     margin-bottom: 15px !important;
-    margin-inline-start: -7px;
+    margin-left: 10px;
     margin-inline-end: -7px;
 }
 .nice-select .list{
+    width: 100%;
     height:360px;
     overflow-y: scroll;
 }
@@ -576,6 +575,7 @@ table{
     background: #ffffff;
     padding:3px 7px;
     box-sizing: border-box;
+    margin-bottom: 7px;
     margin-left: 5px;
     color:#222222;
     box-shadow: 0px 3px 2px -2px #c6c6c6;
@@ -900,6 +900,7 @@ address {
         padding:2px 2px;
     }
     .t_btn{
+        font-size:12px;
         margin-bottom:5px;
     }
     table{
@@ -1110,7 +1111,7 @@ address {
     .l_tab_list div{
         width: 70px;
         height: 50px;
-        font-size: 12px;
+        font-size: 11px;
     }
     fieldset{
         width: 490px;

@@ -85,32 +85,32 @@ header {
 
 .gnb_01 {
     position: absolute;
-    left: 470px;
+    left: 23%;
 }
 
 .gnb_02 {
     position: absolute;
-    left: 630px;
+    left: 33%;
 }
 
 .gnb_03 {
     position: absolute;
-    left: 790px;
+    left: 43%;
 }
 
 .gnb_04 {
     position: absolute;
-    left: 950px;
+    left: 53%;
 }
 
 .gnb_05 {
     position: absolute;
-    left: 1110px;
+    left: 63%;
 }
 
 .gnb_06 {
     position: absolute;
-    left: 1275px;
+    left: 73%;
 }
 
 .gnb dt {
@@ -468,13 +468,14 @@ input::placeholder {
 .spon_list a{
     display: flex;
     justify-content: center;
-    width: 219px;
+    width: 240px;
     padding:8px;
     box-sizing: border-box;
     border: 1px solid #c6c6c6c6;
 }
 .spon_list img{
-    width: 183px;
+    width: 200px;
+    height:auto;
 }
 
 /* footer */
@@ -994,10 +995,10 @@ address {
         margin: 0 auto;
     }
     .spon_list a{
-        width: 150px;
+        width: 100px;
     }
     .spon_list img{
-        width: 50px;
+        width: 100%;
     }
 
     /* footer */

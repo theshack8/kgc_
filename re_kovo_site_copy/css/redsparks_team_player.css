@@ -611,6 +611,14 @@ h3 {
     gap: 10px;
     background: #fff;
 }
+.person_detail_insta {
+    display: flex;
+    justify-content: space-between;
+}
+
+.person_detail_insta > span {
+    display: block;
+}
 
 .p_img_wrap {
     width: 416px;

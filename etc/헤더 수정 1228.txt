@@ -41,3 +41,33 @@ css
     height: 12px;
     background: #fff;
 }
+
+.gnb_01 {
+    position: absolute;
+    left: 23%;
+}
+
+.gnb_02 {
+    position: absolute;
+    left: 33%;
+}
+
+.gnb_03 {
+    position: absolute;
+    left: 43%;
+}
+
+.gnb_04 {
+    position: absolute;
+    left: 53%;
+}
+
+.gnb_05 {
+    position: absolute;
+    left: 63%;
+}
+
+.gnb_06 {
+    position: absolute;
+    left: 73%;
+}

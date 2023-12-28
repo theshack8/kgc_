@@ -1,0 +1,43 @@
+헤더 수정
+
+html
+
+	        <div class="top_menu">
+                        <ul>
+                            <li>
+                                <a href="#none"> LOGIN </a>
+                                <div class="nav_dash"></div>
+                            </li>
+                            <li>
+                                <a href="#none"> SIGN UP </a>
+                                <div class="nav_dash"></div>
+                            </li>
+                            <li class="search_button">
+                                <a href="#none"> SEARCH </a>
+                            </li>
+                        </ul>
+                    </div>
+
+css
+
+/* top menu */
+
+.top_menu ul {
+    width: 210px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.top_menu > ul > li > a {
+    font-size: .9375rem;
+    color: #fff;
+}
+
+.nav_dash{
+    display: inline-block;
+    margin-left: 10px;
+    content: "";
+    width: 1px;
+    height: 12px;
+    background: #fff;
+}

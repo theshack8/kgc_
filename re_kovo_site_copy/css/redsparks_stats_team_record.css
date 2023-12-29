@@ -92,32 +92,32 @@ header {
 
 .gnb_01 {
   position: absolute;
-  left: 470px;
+  left: 23%;
 }
 
 .gnb_02 {
   position: absolute;
-  left: 630px;
+  left: 33%;
 }
 
 .gnb_03 {
   position: absolute;
-  left: 790px;
+  left: 43%;
 }
 
 .gnb_04 {
   position: absolute;
-  left: 950px;
+  left: 53%;
 }
 
 .gnb_05 {
   position: absolute;
-  left: 1110px;
+  left: 63%;
 }
 
 .gnb_06 {
   position: absolute;
-  left: 1275px;
+  left: 73%;
 }
 
 .gnb dt {
@@ -147,10 +147,11 @@ header {
   display: none;
 }
 
+
 /* top menu */
 
 .top_menu ul {
-  width: 227px;
+  width: 210px;
   display: flex;
   justify-content: space-between;
 }
@@ -158,10 +159,6 @@ header {
 .top_menu > ul > li > a {
   font-size: .9375rem;
   color: #222;
-}
-
-.top_menu > ul > li:last-child::after {
-  display: none;
 }
 
 .nav_dash{
@@ -172,6 +169,7 @@ header {
   height: 12px;
   background: #222;
 }
+
 
 /* mobile menu */
 
@@ -498,8 +496,10 @@ margin-bottom: 24px;
 .css-player-tab li[data-tab="true"] {
   width:50%;
   text-align: center;
-  background: #f28695;
-  color : #000;
+  background: #fff;
+  color : #d91833;
+  border:1px solid;
+
 }
 
 

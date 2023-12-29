@@ -189,31 +189,42 @@
             });
 
             /* 유효성검사 */
-            function submit_check() {
-                var email = document.getElementById("txtuserid").value;
-                var password = document.getElementById("txtuserpw").value;
-                var emailErr = document.querySelector('.email_password .err:nth-of-type(1)');
-                var pwErr = document.querySelector('.email_password .err:nth-of-type(2)');
+            $('#loginBtn').on('click', function(e){
+                e.preventDefault();
+                $('#err1').removeClass("block");
+                $('#err1').addClass("err");
+                $('#err2').removeClass("block");
+                $('#err2').addClass("err");
+                let userId = $("#userId").val().trim();
+                let userPw = $("#userPw").val();
 
-                // 이메일과 비밀번호가 빈 칸인지 확인
-                if (email.trim() === "") {
-                    emailErr.style.display = "block";
-                } else {
-                    emailErr.style.display = "none";
-                }
+                // 이메일 유효성 검사
+                var regEmail = /^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$/;
+                
+                // 비밀번호 유효성 검사
+                var regPw = /^[a-zA-Z0-9]{4,12}$/;
 
-                if (password.trim() === "") {
-                    pwErr.style.display = "block";
-                } else {
-                    pwErr.style.display = "none";
+                /* 이메일 */
+                if(userId == ""){
+                    $('#err1').removeClass("err");
+                    $('#err1').addClass("block");
+                    return false;
                 }
-
-                // 유효성 검사를 통과하면 로그인을 처리하는 함수 호출 (여기선 처리하지 않고 기능 구현)
-                if (email.trim() !== "" && password.trim() !== "") {
-                    // 여기서 로그인 처리 함수 호출 또는 다른 동작 수행
-                    // 예: handleLogin(email, password);
+                if(!regEmail.test(userId)){
+                    $('#err1').removeClass("block");
+                    $('#err1').addClass("err");
+                    alert("잘못된 이메일 형식입니다.");
+                    return false;
                 }
-            }
+                
+                /* 비밀번호 */
+                if(!regPw.test(userPw)){
+                    $('#err2').removeClass("err");
+                    $('#err2').addClass("block");
+                    return false;
+                }
+            })
+            
         });
     </script>
 </head>
@@ -295,7 +306,7 @@
                             <div class="nav_dash"></div>
                         </li>
                         <li>
-                            <a href="#none"> SIGN UP </a>
+                            <a href="http://sooparkle.dothome.co.kr/signup_agreement.html"> SIGN UP </a>
                             <div class="nav_dash"></div>
                         </li>
                         <li class="search_button">
@@ -514,16 +525,16 @@
                 <div class="form_wrap">
                     <form action="">
                         <div class="email_password">
-                            <label for="id" class="email">이메일</label>
-                            <input type="text" id="txtuserid" name="email" placeholder="이메일을 입력해 주세요.">
-                            <p class="err">이메일을 입력해주세요.</p>
-                            <label for="pw" class="password">비밀번호</label>
-                            <input type="password" id="txtuserpw" name="pw" placeholder="비밀번호를 입력해 주세요.">
-                            <p class="err">비밀번호를 입력해주세요.</p>
+                            <label for="userId" class="email">이메일</label>
+                            <input type="text" id="userId" name="email" placeholder="이메일을 입력해 주세요.">
+                            <p class="err" id="err1">이메일을 입력해주세요.</p>
+                            <label for="userPw" class="password">비밀번호</label>
+                            <input type="password" id="userPw" name="pw" placeholder="비밀번호를 입력해 주세요." autocomplete="off">
+                            <p class="err" id="err2">비밀번호는 4~12자 영문 대소문자, 숫자만 입력하세요.</p>
                         </div>
                         <div class="login_signup">
-                            <button type="submit" class="login" id="login" onclick="submit_check();">로그인</button>
-                            <button type="submit" class="signup" id="signup">통합 회원가입</button>
+                            <button type="button" class="login" id="loginBtn">로그인</button>
+                            <a href="http://sooparkle.dothome.co.kr/signup_agreement.html" class="signup">통합 회원가입</a>
                         </div>
                     </form>
                 </div>

@@ -433,7 +433,15 @@ h2 > span {
     font-weight: 500;
     color: #d91833;
     margin-top: 5px;
-    /* display: none; */
+    display: none;
+}
+
+.block {
+    font-size: 13px;
+    font-weight: 500;
+    color: #d91833;
+    margin-top: 5px;
+    display: block;
 }
 
 .login_signup {
@@ -448,8 +456,6 @@ h2 > span {
     align-items: center;
     font-weight: 700;
     padding: 0 18px;
-    width: 476px;
-    height: 55px;
     font-size: 16px;
     border-radius: 6px;
     cursor: pointer;
@@ -458,11 +464,15 @@ h2 > span {
 .login {
     background: #d91833;
     color: #fff;
+    width: 476px;
+    height: 55px;
 }
 
 .signup {
     border: 1px solid #d91833;
     color: #d91833;
+    width: 437px;
+    height: 52px;
 }
 
 .email_password_search {

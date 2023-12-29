@@ -27,6 +27,15 @@ svg{
 
 }
 
+.popup-sns {
+  display: flex;
+  justify-content: space-between;
+}
+
+.popup-sns img{
+  width: 30px;
+}
+
 
 .popup > h3{
   text-align: center;

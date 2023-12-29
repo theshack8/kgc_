@@ -542,6 +542,7 @@ z-index: -1;
 .package-item .button-wrap a:nth-of-type(2){
   background: #d91833;
   color:#fff;
+  border:none;
 
 }
 

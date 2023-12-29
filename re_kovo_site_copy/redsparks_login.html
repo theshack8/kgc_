@@ -3,16 +3,222 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/nice-select.css">
-    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
-    <!-- select plugin -->
-    <script src="js/jquery.nice-select.min.js"></script>
-    <title>GAME</title>
-    <link rel="stylesheet" href="css/reset2.css">
-    <link rel="stylesheet" href="css/redsparks_game_cup.css">
+    <title>login</title>
+    <link rel="stylesheet" href="/css/reset.css">
+    <link rel="stylesheet" href="/css/redsparks_login.css">
     <link rel="icon" href="/images/rs_logo.png">
+    <script src="/js/jquery-3.7.1.min.js"></script>
+    <script  type="text/javascript">
+        $(document).ready(function(){
+            /* 메뉴바 마우스 오버(enter and leave) 이벤트 */
+            // enter
+            $(".gnb").mouseenter(function(){
+                holding = 1;
+                if(holding == 1){
+                    $(".logo_wrap_btn img").attr('src', "../images/arrow_d.png");
+                    $(".header").css({"height":"100%", "background":"rgba(0,0,0, 0.5)"});
+                    $(".gnb dl, .nav_bg").css({"display":"block"});
+                    $(".search_wrap, .logo_category").css({"display":"none"});
+                }
+            });
+            // leave
+            $(".header_wrap").mouseleave(function(){
+                holding = 0;
+                $(".logo_wrap_btn img").attr('src', "../images/arrow_d.png");
+                $(".header").css({"height":"0", "background":"none"});
+                $(".gnb dl, .nav_bg, .search_wrap, .logo_category").css({"display":"none"});
+            });
+
+            /* 헤더 */
+            let dash = $('.nav_dash');
+            let holding = 0;
+            let active2 = 0;
+            let holding2 = 0;
+
+            /* logo category click*/           
+            $(".logo_wrap_btn").on('click', function (e) {
+                e.preventDefault();
+                let arrow_d = $(".logo_wrap_img img").attr('src');
+                let arrow_u = "/images/arrow_u.png";
+                if (active2 == 0 && holding2 == 0) {
+                    holding2 = 1;
+                    active2 = 1;
+                    $(".logo_wrap_btn img").attr('src', "../images/arrow_u.png");
+                    $(".logo_category").css({ "display": "block" });
+                    $(".header").css({ "height": "100%", "background": "rgba(0,0,0, 0.5)" });
+                    $(".gnb dl, .nav_bg, .search_wrap").css({ "display": "none" });
+                } else if (active2 == 1) {
+                    holding2 = 0;
+                    active2 = 0;
+                    $(".logo_wrap_btn img").attr('src', "../images/arrow_d.png");
+                    $(".logo_category").css({ "display": "none" });
+                    $(".header").css({ "height": "0", "background": "none" });
+                    $(".gnb dl, .nav_bg, .search_wrap").css({ "display": "none" });
+                };
+                console.log(active2);
+            });
+
+            /* emb mouseleave */
+            $(".logo_category").mouseenter(function () {
+                $(".logo_wrap_btn img").attr('src', "../images/arrow_u.png");
+                $(".logo_category").css({ "display": "block" });
+                $(".header").css({ "height": "100%", "background": "rgba(0,0,0, 0.5)" });
+                $(".gnb dl").css({ "display": "none" });
+            });
+            $(".logo_category").mouseleave(function () {
+                holding2 = 0;
+                $(".logo_wrap_btn img").attr('src', "../images/arrow_d.png");
+                $(".logo_category").css({ "display": "none" });
+                $(".header").css({ "height": "90px", "background": "none" });
+                console.log(top);
+            });
+
+            /* emb hover*/
+            // let color = ['#5448AA','#0082CA','#ED0404','#292F85','#FF5724','#FDAD17','#0C4DA2','#102A86','#C408A1','#16193E','#D91833','#0B91A7','#0055A5','#DF0024']
+            color1 = ['#5448AA', '#0082CA', '#ED0404', '#292F85', '#FF5724', '#FDAD17', '#0C4DA2'];
+            color2 = ['#102A86', '#C408A1', '#16193E', '#D91833', '#0B91A7', '#0055A5', '#DF0024'];
+            let default_color = "#fff";
+            /* m_emb hover */
+            $(".m_emb").hover(function () {
+                let idx = $(this).parent().index();
+                let border_set = "5px solid " + color1[idx];
+                $(this).css({ border: border_set });
+                // console.log(border_set)
+            }, function () {
+                let border_set = "1px solid " + default_color;
+                $(this).css({ border: border_set });
+            });
+            /* w_emb hover */
+            $(".w_emb").hover(function () {
+                let idx = $(this).parent().index();
+                let border_set = "5px solid " + color2[idx];
+                $(this).css({ border: border_set });
+                // console.log(border_set)
+            }, function () {
+                let border_set = "1px solid " + default_color;
+                $(this).css({ border: border_set });
+            });
+
+            /* 토글 메뉴 */
+            // click
+            $(".toggle_button").click(function(){
+                if (window.innerWidth <= 768){
+                    $("body").css({"overflow":"hidden"});
+                    $(".toggle").fadeIn("");
+                    $(".toggle").css({"width":"100%"});
+                    $(".toggle").css({"right":"0"});
+                    $(".toggle").css({"display":"block"});
+                    $(".logo_category, .search_wrap").css({"display":"none"});
+                } else if(window.innerWidth <= 1124){
+                    $("header").css({"height":"100%", "background":"rgba(0,0,0, 0.5)"});
+                    $(".header_wrap").css({"padding":"0", "background":"#fff" });
+                    $("body").css({"overflow":"hidden"});
+                    $(".toggle").fadeIn("");
+                    $(".toggle").css({"width":"340px"});
+                    $(".toggle").css({"right":"0"});
+                    $(".topmenu_bg").css({"display":"block"});
+                    $(".toggle").css({"display":"block"});
+                    $(".logo_category, .search_wrap").css({"display":"none"});
+                };
+            })
+            // close
+            $(".toggle_close").click(function(){
+                if (window.innerWidth <= 768){
+                    $("body").css({"overflow":""});
+                    $("header").css({"display":"block"});
+                    $(".toggle").fadeOut("");
+                    $(".toggle").css({"right":"-840px"});
+                } else if(window.innerWidth <= 1124){
+                    $(".header_wrap").css({"padding":"0 60px", "background":"#fff" });
+                    $("header").css({"height":"0", "display":"block"});
+                    $("body").css({"overflow":""});
+                    $(".topmenu_bg").css({"display":"none"});
+                    $(".toggle").fadeOut("");
+                    $(".toggle").css({"right":"-340px"});
+                };
+            })
+
+            // body 
+            $("body").mouseleave(function(){
+                if (window.innerWidth <= 768){
+                    $(".toggle").css({"width":"0"});
+                    $("body").css({"overflow":""});
+                    $(".search_wrap, .logo_category").css({"display":"none"});
+                } else {
+                    $("header").css({"display":"block"});
+                    $(".toggle").css({"width":"0"});                    
+                    $("body").css({"overflow":""});
+                    $(".topmenu_bg, .search_wrap, .logo_category").css({"display":"none"});
+                }
+            })
+
+            /* 검색창 */
+            let active = 0;
+            $(".search_button").on('click', function(){
+                if(active == 0){
+                    active = 1;
+                    $(".header_wrap").css({"background":"rgba(255, 255, 255, 1)" });
+                    $(dash).css({"background-color":"#000"});
+                    $(".logo_wrap span, .gnb > ul > li > a, .top_menu > ul > li > a").css({"color":"#000"});
+                    $(".logo_wrap_btn img").attr('src', "../images/arrow_d.png");
+                    $(".header").css({"height":"100%", "background":"rgba(0,0,0, 0.5)"});
+                    $(".search_wrap").css({"display":"block"});
+                    $(".gnb dl, .nav_bg, .logo_category").css({"display":"none"});
+                } else if(active == 1){
+                    active = 0;
+                    $(".header").css({"height":"100%", "background":"none"});
+                    $(".gnb dl, .nav_bg, .logo_category, .search_wrap").css({"display":"none"});
+                };
+                console.log(active);
+            });
+
+            /* search mouseleave */
+            $(".search_wrap").mouseenter(function () {
+                $(".logo_wrap_btn img").attr('src', "../images/arrow_d.png");
+                $(".header").css({ "height": "100%", "background": "rgba(0,0,0, 0.5)" });
+                $(".gnb dl, .logo_category").css({ "display": "none" });
+                $(".header_wrap").css({ "background": "#fff" });
+                $(dash).css({"background-color":"#000"});
+                $(".logo_wrap span, .gnb > ul > li > a, .top_menu > ul > li > a").css({"color":"#000"});
+            });
+            $(".search_wrap").mouseleave(function () {
+                $(".logo_wrap_btn img").attr('src', "../images/arrow_d.png");
+                $(".logo_category, .search_wrap, .gnb > dl").css({ "display": "none" });
+                $(".header").css({ "height": "90px", "background": "none" });
+                console.log(active + "검색창");
+            });
+
+            /* 유효성검사 */
+            function submit_check() {
+                var email = document.getElementById("txtuserid").value;
+                var password = document.getElementById("txtuserpw").value;
+                var emailErr = document.querySelector('.email_password .err:nth-of-type(1)');
+                var pwErr = document.querySelector('.email_password .err:nth-of-type(2)');
+
+                // 이메일과 비밀번호가 빈 칸인지 확인
+                if (email.trim() === "") {
+                    emailErr.style.display = "block";
+                } else {
+                    emailErr.style.display = "none";
+                }
+
+                if (password.trim() === "") {
+                    pwErr.style.display = "block";
+                } else {
+                    pwErr.style.display = "none";
+                }
+
+                // 유효성 검사를 통과하면 로그인을 처리하는 함수 호출 (여기선 처리하지 않고 기능 구현)
+                if (email.trim() !== "" && password.trim() !== "") {
+                    // 여기서 로그인 처리 함수 호출 또는 다른 동작 수행
+                    // 예: handleLogin(email, password);
+                }
+            }
+        });
+    </script>
 </head>
 <body>
+    <div class="body_bg_2"></div>
     <div class="wrap">
         <header class="header">
             <div class="header_wrap">
@@ -193,7 +399,7 @@
                                     </div>
                                     <p>현대건설</p>
                                 </a>
-                                <a href="http://sooparkle.dothome.co.kr/redsparks_main.html">
+                                <a href="http://sooparkle.dothome.co.kr/index.html">
                                     <div class="w_emb" id="jung_emb">
                                         <img src="../images/rs_logo.png">
                                     </div>
@@ -222,27 +428,6 @@
                         <a href="#none">
                             <div class="kovo_home">KOVO 홈으로 ></div>
                         </a>
-                    </div>
-                    <div class="toggle ">
-                        <div class="toggle_header">
-                            <div class="toggle_header_top">
-                                <div class="language">
-                                    <a href="#none">KO</a>
-                                    <p>|</p>
-                                    <a href="#none">EN</a>
-                                </div>
-                                <div class="icon">
-                                    <a href="#none"><svg width="24" height="24" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" color="#fff"><g id="ic-home"><path id="Vector" d="M16.6719 8.5623L10.4219 2.88261C10.3067 2.77721 10.1562 2.71875 10 2.71875C9.84384 2.71875 9.69334 2.77721 9.57812 2.88261L3.32812 8.5623C3.26523 8.6217 3.21486 8.69308 3.17998 8.77224C3.14509 8.8514 3.1264 8.93674 3.125 9.02324V16.2498C3.125 16.4156 3.19085 16.5745 3.30806 16.6917C3.42527 16.809 3.58424 16.8748 3.75 16.8748H16.25C16.4158 16.8748 16.5747 16.809 16.6919 16.6917C16.8092 16.5745 16.875 16.4156 16.875 16.2498V9.02324C16.8736 8.93674 16.8549 8.8514 16.82 8.77224C16.7851 8.69308 16.7348 8.6217 16.6719 8.5623V8.5623Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path></g></svg></a>
-                                    <a href="#none" class="toggle_close"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" color="#fff"><g id="ic-close-wh-md" clip-path="url(#clip0_2492_41668)"><path id="Vector" d="M18.75 5.25L5.25 18.75" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path><path id="Vector_2" d="M18.75 18.75L5.25 5.25" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></g><defs><clipPath id="clip0_2492_41668"><rect width="24" height="24" fill="currentColor"></rect></clipPath></defs></svg></a>
-                                </div>
-                            </div>
-                            <div class="toggle_header_bottom">
-                                <a href="#none">
-                                    로그인해 주세요
-                                    <svg width="14" height="14" viewBox="0 0 32 33" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="ic/32px/right" clip-path="url(#clip0_2773_91867)"><path id="Vector" d="M12 6.5L22 16.5L12 26.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></g><defs><clipPath id="clip0_2773_91867"><rect width="32" height="32" fill="white" transform="translate(0 0.5)"></rect></clipPath></defs></svg>
-                                </a>
-                            </div>
-                        </div>
                     </div>
                 </div>
                 <div class="toggle">
@@ -322,151 +507,34 @@
                 <div class="topmenu_bg"></div>
             </div>
         </header>
-
-        <main class="main">
+        <main>
             <div class="h_full_box"></div>
-            <div class="main_banner">
-                <span>정관장</span>
-            </div>
-            <div class="sub_nav">
-                <ul>
-                    <li>
-                        <a href="http://sooparkle.dothome.co.kr/redsparks_game_vleague.html">V-리그</a>
-                    </li>
-                    <li class="ac_font">
-                        <a href="http://sooparkle.dothome.co.kr/redsparks_game_cup.html">컵대회</a>
-                    </li>
-                </ul>
-            </div>
-            <div class="contents_wrap">
-                <div class="content_h">
-                    <h2>컵대회</h2>
-                    <ul>
-                        <li>
-                            <img src="images/home.png" alt="home">
-                        </li>
-                        <li>
-                            <span class="gray_font">GAME</span>
-                        </li>
-                        <li>
-                            <span>컵대회</span>
-                        </li>
-                    </ul>
+            <div class="main_wrap">
+                <h2>정관장 <span>REDSPARKS</span> 로그인</h2>
+                <div class="form_wrap">
+                    <form action="">
+                        <div class="email_password">
+                            <label for="id" class="email">이메일</label>
+                            <input type="text" id="txtuserid" name="email" placeholder="이메일을 입력해 주세요.">
+                            <p class="err">이메일을 입력해주세요.</p>
+                            <label for="pw" class="password">비밀번호</label>
+                            <input type="password" id="txtuserpw" name="pw" placeholder="비밀번호를 입력해 주세요.">
+                            <p class="err">비밀번호를 입력해주세요.</p>
+                        </div>
+                        <div class="login_signup">
+                            <button type="submit" class="login" id="login" onclick="submit_check();">로그인</button>
+                            <button type="submit" class="signup" id="signup">통합 회원가입</button>
+                        </div>
+                    </form>
                 </div>
-                <div class="cup_cont">
-                    <div class="c_tab_list">
-                        <a href="#none">
-                            <div id="ac_tab">일정 및 결과</div>
-                        </a>
-                        <a href="#none">
-                            <div>팀 순위</div>
-                        </a>
-                        <a href="#none">
-                            <div>선수 순위</div>
-                        </a>
-                        <a href="#none">
-                            <div>대회정보</div>
-                        </a>
-                        <a href="#none">
-                            <div style="border-top:none;border-right:none;"></div>
-                        </a>
-                        <a href="#none">
-                            <div class="none_border" style="border-top:none;border-right:none;"></div>
-                        </a>
-                        <a href="#none">
-                            <div class="none_border" style="border-top:none;border-right:none;"></div>
-                        </a>
-                    </div>
-                    <div class="cup_section">
-                        <form name="cup">
-                            <fieldset>
-                                <legend>리그</legend>
-                            <div class="d-flex">
-                            <select name="cup_lg" class="c_select" id="">
-                                <option value="">2023 구미·도드람컵 프로배구대회</option>
-                                <option value="">2022 순천 도드람컵 프로배구대회</option>
-                                <option value="">2021 의정부·도드람컵 프로배구대회</option>
-                                <option value="">2020 제천·MG새마을금고컵 프로배구대회</option>
-                                <option value="">2019 순천·MG새마을금고컵 프로배구대회</option>
-                                <option value="">2018 제천·KAL컵 남자프로배구대회</option>
-                                <option value="">2018 보령·한국도로공사컵 여자프로배구대회</option>
-                                <option value="">2017 천안·넵스컵 프로배구대회</option>
-                                <option value="">2016 청주·KOVO컵 프로배구대회</option>
-                                <option value="">2015 청주·KOVO컵 프로배구대회</option>
-                                <option value="">2014 안산우리카드컵 프로배구대회</option>
-                                <option value="">2013 안산우리카드컵 프로배구대회</option>
-                                <option value="">2012 수원컵 프로배구대회</option>
-                                <option value="">2011 수원 IBK기업은행컵 프로배구대회</option>
-                                <option value="">2010 수원 IBK기업은행컵 프로배구대회</option>
-                                <option value="">2009 부산 IBK기업은행 국제배구대회</option>
-                                <option value="">2008 IBK 기업은행배 양산프로배구</option>
-                                <option value="">2007 KOVO컵 마산프로배구</option>
-                            </select>
-                            <button type="button" class="h_btn">방송편성표</button>
-                            </div>
-                            <div>
-                                <select name="cup_day" class="c_day">
-                                    <option value="" selected="selected">2023년 07월</option>
-                                    <option value="">2023년 08월</option>
-                                
-                                </select>
-                            </div>
-                        </fieldset>
-                        <table class="cup_table">
-                            <thead>
-                                <tr>
-                                    <th>날짜</th>
-                                    <th style="width: 60px;">순번</th>
-                                    <th style="width: 60px;">구분</th>
-                                    <th style="width: 190px;">경기</th>
-                                    <th style="width: 70px;">시간</th>
-                                    <th style="width: 152px;">구장</th>
-                                    <th style="width: 125px;">중계일정</th>
-                                    <th style="width: 130px;">라운드</th>
-                                    <th style="width: 190px;">비고</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td class="h_font">07.29 (토)</td>
-                                    <td>2</td>
-                                    <td>여자</td>
-                                    <td>현대건설 3:0 KGC인삼공사</td>
-                                    <td>16:20</td>
-                                    <td>구미박정희체육관</td>
-                                    <td>KBSN Sports<br>
-                                    SBS Sports</td>
-                                    <td>V리그 1Round</td>
-                                    <td>
-                                        <div>
-                                            <button class="t_btn">하이라이트</button>
-                                            <button class="t_btn">상세결과</button>
-                                        </div>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td class="h_font">07.31 (월)</td>
-                                    <td>6</td>
-                                    <td>여자</td>
-                                    <td>KGC인삼공사 3:0 한국도로공사</td>
-                                    <td>19:00</td>
-                                    <td>구미박정희체육관</td>
-                                    <td>KBSN Sports<br>
-                                        SBS Sports</td>
-                                    <td>V리그 1Round</td>
-                                    <td>
-                                        <div>
-                                            <button class="t_btn">하이라이트</button>
-                                            <button class="t_btn">상세결과</button>
-                                        </div>
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table>
-                        </form>
+                <div class="email_password_search">
+                    <div class="ep_wrap">
+                        <a href="#none">이메일 찾기</a>
+                        <div class="divider"></div>
+                        <a href="#none">비밀번호 찾기</a>
                     </div>
                 </div>
-            </div>    
+            </div>
         </main>
         <footer>
             <div class="footer_wrap">
@@ -476,239 +544,24 @@
                 <div class="footer_detail">
                     <div class="term">
                         <ul>
-                            <li><a href="#">ANTIDOPING</a></li>
-                            <li><a href="#">선수고충처리센터</a></li>
-                            <li><a href="#">클린센터</a></li>
-                            <li><a href="#">개인정보처리방침</a></li>
-                            <li><a href="#">이용약관</a></li>
-                            <li><a href="#">이메일무단수집거부</a></li>
-                            <li><a href="#">오시는 길</a></li>
-                            <li><a href="#">통합SNS</a></li>
+                            <li><a href="#none">ANTIDOPING</a></li>
+                            <li><a href="#none">선수고충처리센터</a></li>
+                            <li><a href="#none">클린센터</a></li>
+                            <li><a href="#none">개인정보처리방침</a></li>
+                            <li><a href="#none">이용약관</a></li>
+                            <li><a href="#none">이메일무단수집거부</a></li>
+                            <li><a href="#none">오시는 길</a></li>
+                            <li><a href="#none">통합SNS</a></li>
                         </ul>
                     </div>
                     <address>[03925] 서울특별시 마포구 월드컵북로 402 KGIT센터 11층 한국배구연맹 | TEL : 02-422-0110 | FAX : 02-418-0131
                     </address>
-                    <p>Copyright (C) KOREAN VOLLEYBALL FEDERATION. ALL RIGHT RESERVED</p>
-                    <p class="term_p">KOVO 및 KOVO 소속 14개 팀로고, 마스코트, 엠블럼과 KOVO 소속 선수의 사진, 초상, 영상, 캐릭터 및 기타 KOVO의 지적재산권등을 무단으로 사용하는
-                        것은 상표법 및 저작권법에 의해 금지됩니다.</p>
+                    <P>Copyright (C) KOREAN VOLLEYBALL FEDERATION. ALL RIGHT RESERVED</P>
+                    <P class="term_p">KOVO 및 KOVO 소속 14개 팀로고, 마스코트, 엠블럼과 KOVO 소속 선수의 사진, 초상, 영상, 캐릭터 및 기타 KOVO의 지적재산권등을 무단으로 사용하는
+                        것은 상표법 및 저작권법에 의해 금지됩니다.</P>
                 </div>
             </div>
         </footer>
     </div>
-<script>
-    $(document).ready(function () {
-       /* 메뉴바 마우스 오버(enter and leave) 이벤트 */
-            // enter
-            $(".gnb").mouseenter(function(){
-                holding = 1;
-                if(holding == 1){
-                    $(".logo_wrap_btn img").attr('src', "../images/arrow_d.png");
-                    $(".header").css({"height":"100%", "background":"rgba(0,0,0, 0.5)"});
-                    $(".gnb dl, .nav_bg").css({"display":"block"});
-                    $(".search_wrap, .logo_category").css({"display":"none"});
-                }
-            });
-            // leave
-            $(".header_wrap").mouseleave(function(){
-                holding = 0;
-                $(".logo_wrap_btn img").attr('src', "../images/arrow_d.png");
-                $(".header").css({"height":"0", "background":"none"});
-                $(".gnb dl, .nav_bg, .search_wrap, .logo_category").css({"display":"none"});
-            });
-
-            /* 헤더 */
-            let dash = $('.nav_dash');
-            let holding = 0;
-            let active2 = 0;
-            let holding2 = 0;
-
-            /* logo category click*/           
-            $(".logo_wrap_btn").on('click', function (e) {
-                e.preventDefault();
-                let arrow_d = $(".logo_wrap_img img").attr('src');
-                let arrow_u = "/images/arrow_u.png";
-                if (active2 == 0 && holding2 == 0) {
-                    holding2 = 1;
-                    active2 = 1;
-                    $(".logo_wrap_btn img").attr('src', "../images/arrow_u.png");
-                    $(".logo_category").css({ "display": "block" });
-                    $(".header").css({ "height": "100%", "background": "rgba(0,0,0, 0.5)" });
-                    $(".gnb dl, .nav_bg, .search_wrap").css({ "display": "none" });
-                } else if (active2 == 1) {
-                    holding2 = 0;
-                    active2 = 0;
-                    $(".logo_wrap_btn img").attr('src', "../images/arrow_d.png");
-                    $(".logo_category").css({ "display": "none" });
-                    $(".header").css({ "height": "0", "background": "none" });
-                    $(".gnb dl, .nav_bg, .search_wrap").css({ "display": "none" });
-                };
-                console.log(active2);
-            });
-
-            /* emb mouseleave */
-            $(".logo_category").mouseenter(function () {
-                $(".logo_wrap_btn img").attr('src', "../images/arrow_u.png");
-                $(".logo_category").css({ "display": "block" });
-                $(".header").css({ "height": "100%", "background": "rgba(0,0,0, 0.5)" });
-                $(".gnb dl").css({ "display": "none" });
-            });
-            $(".logo_category").mouseleave(function () {
-                holding2 = 0;
-                $(".logo_wrap_btn img").attr('src', "../images/arrow_d.png");
-                $(".logo_category").css({ "display": "none" });
-                $(".header").css({ "height": "90px", "background": "none" });
-                console.log(top);
-            });
-
-            /* emb hover*/
-            // let color = ['#5448AA','#0082CA','#ED0404','#292F85','#FF5724','#FDAD17','#0C4DA2','#102A86','#C408A1','#16193E','#D91833','#0B91A7','#0055A5','#DF0024']
-            color1 = ['#5448AA', '#0082CA', '#ED0404', '#292F85', '#FF5724', '#FDAD17', '#0C4DA2'];
-            color2 = ['#102A86', '#C408A1', '#16193E', '#D91833', '#0B91A7', '#0055A5', '#DF0024'];
-            let default_color = "#fff";
-            /* m_emb hover */
-            $(".m_emb").hover(function () {
-                let idx = $(this).parent().index();
-                let border_set = "5px solid " + color1[idx];
-                $(this).css({ border: border_set });
-                // console.log(border_set)
-            }, function () {
-                let border_set = "1px solid " + default_color;
-                $(this).css({ border: border_set });
-            });
-            /* w_emb hover */
-            $(".w_emb").hover(function () {
-                let idx = $(this).parent().index();
-                let border_set = "5px solid " + color2[idx];
-                $(this).css({ border: border_set });
-                // console.log(border_set)
-            }, function () {
-                let border_set = "1px solid " + default_color;
-                $(this).css({ border: border_set });
-            });
-
-           /* 토글 메뉴 */
-            // click
-            $(".toggle_button").click(function(){
-                if (window.innerWidth <= 768){
-                    $("body").css({"overflow":"hidden"});
-                    $(".toggle").fadeIn("");
-                    $(".toggle").css({"width":"100%"});
-                    $(".toggle").css({"right":"0"});
-                    $(".toggle").css({"display":"block"});
-                    $(".logo_category, .search_wrap").css({display:"none"});
-                } else if(window.innerWidth <= 1124){
-                    $("header").css({"height":"100%", "background":"rgba(0,0,0, 0.5)"});
-                    $(".header_wrap").css({"padding":"0", "background":"#fff" });
-                    $("body").css({"overflow":"hidden"});
-                    $(".toggle").fadeIn("");
-                    $(".toggle").css({"width":"340px"});
-                    $(".toggle").css({"right":"0"});
-                    $(".topmenu_bg").css({"display":"block"});
-                    $(".toggle").css({"display":"block"});
-                    $(".logo_category, .search_wrap").css({display:"none"});
-                };
-            })
-            // close
-            $(".toggle_close").click(function(){
-                if (window.innerWidth <= 768){
-                    $("body").css({"overflow":""});
-                    $("header").css({"display":"block"});
-                    $(".toggle").fadeOut("");
-                    $(".toggle").css({"right":"-840px"});
-                } else if(window.innerWidth <= 1124){
-                    $(".header_wrap").css({"padding":"0 60px", "background":"#fff" });
-                    $("header").css({"height":"0", "display":"block"});
-                    $("body").css({"overflow":""});
-                    $(".topmenu_bg").css({"display":"none"});
-                    $(".toggle").fadeOut("");
-                    $(".toggle").css({"right":"-340px"});
-                };
-            })
-
-
-            // body 
-            $("body").mouseleave(function(){
-                if (window.innerWidth <= 768){
-                    $(".toggle").css({"width":"0"});
-                    $("body").css({"overflow":""});
-                    $(".search_wrap, .logo_category").css({"display":"none"});
-                } else {
-                    $("header").css({"display":"block"});
-                    $(".toggle").css({"width":"0"});                    
-                    $("body").css({"overflow":""});
-                    $(".topmenu_bg, .search_wrap, .logo_category").css({"display":"none"});
-                }
-            })
-
-            /* 검색창 */
-            let active = 0;
-            $(".search_button").on('click', function(){
-                if(active == 0){
-                    active = 1;
-                    $(".header_wrap").css({"background":"rgba(255, 255, 255, 1)" });
-                    $(dash).css({"background-color":"#000"});
-                    $(".logo_wrap span, .gnb > ul > li > a, .top_menu > ul > li > a").css({"color":"#000"});
-                    $(".logo_wrap_btn img").attr('src', "../images/arrow_d.png");
-                    $(".header").css({"height":"100%", "background":"rgba(0,0,0, 0.5)"});
-                    $(".search_wrap").css({"display":"block"});
-                    $(".gnb dl, .nav_bg, .logo_category").css({"display":"none"});
-                } else if(active == 1){
-                    active = 0;
-                    $(".header").css({"height":"100%", "background":"none"});
-                    $(".gnb dl, .nav_bg, .logo_category, .search_wrap").css({"display":"none"});
-                };
-                console.log(active);
-            });
-
-            /* search mouseleave */
-            $(".search_wrap").mouseenter(function () {
-                $(".logo_wrap_btn img").attr('src', "../images/arrow_d.png");
-                $(".header").css({ "height": "100%", "background": "rgba(0,0,0, 0.5)" });
-                $(".gnb dl, .logo_category").css({ "display": "none" });
-                $(".header_wrap").css({ "background": "#fff" });
-                $(dash).css({"background-color":"#000"});
-                $(".logo_wrap span, .gnb > ul > li > a, .top_menu > ul > li > a").css({"color":"#000"});
-            });
-            $(".search_wrap").mouseleave(function () {
-                $(".logo_wrap_btn img").attr('src', "../images/arrow_d.png");
-                $(".logo_category, .search_wrap, .gnb > dl").css({ "display": "none" });
-                $(".header").css({ "height": "90px", "background": "none" });
-                console.log(active + "검색창");
-            });
-
-            /* 상세보기 */
-            $(".detail_btn").click(function(){
-                    $(".person_detail").css({"display":"block"});
-                    $("body").css({"overflow":"hidden"});
-                    $(".body_bg_2").css({"display":"block"});
-                });
-            // close
-            $(".person_detail > a").click(function(){
-                    $(".person_detail").css({"display":"none"});
-                    $("body").css({"overflow":""});
-                    $(".body_bg_2").css({"display":"none"});
-                });
-
-            let pd_active = 0;
-            $("body_bg_2").on('click', function(){
-                if(pd_active == 0){
-                    pd_active = 1;
-                    $(".person_detail").css({"display":"block"});
-                    $("body").css({"overflow":"hidden"});
-                    $(".body_bg_2").css({"display":"block"});
-                } else if(pd_active == 1){
-                    pd_active = 0;
-                    $(".person_detail").css({"display":"none"});
-                    $("body").css({"overflow":""});
-                    $(".body_bg_2").css({"display":"none"});
-                }
-            });
-
-
-        /* select plugin */
-        $('select').niceSelect();
-
-    });
-</script>
 </body>
 </html>
